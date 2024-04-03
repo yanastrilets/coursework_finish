@@ -1,38 +1,1562 @@
-.App {
-  text-align: center;
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container,
+.main-container * {
+    box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input,
+select,
+textarea,
+button {
+    outline: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+    position: relative;
+    width: 1440px;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+}
+.rectangle {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 1px 0 0 0;
+    background: #ffffff;
+    z-index: 122;
+    overflow: visible auto;
+}
+.flex-row-ed {
+    position: relative;
+    width: 1257px;
+    height: 50px;
+    margin: 15px 0 0 150px;
+    z-index: 131;
+}
+.bg {
+    position: absolute;
+    width: 11.14%;
+    height: 100%;
+    top: 0;
+    left: 88.86%;
+    background: #3252df;
+    z-index: 124;
+    border-radius: 4px;
+    box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
+}
+.show-me-now {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 125;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.regroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 156px;
+    height: 50px;
+    top: 0;
+    left: 821px;
+    z-index: 131;
+}
+.home {
+    flex-shrink: 0;
+    position: relative;
+    width: 51px;
+    height: 24px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: right;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 131;
+}
+.home-1 {
+    position: relative;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: right;
+}
+.nbsp {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: right;
+}
+.catalog {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    position: relative;
+    width: 82px;
+    height: 24px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: right;
+    white-space: nowrap;
+    z-index: 127;
+}
+.staycation {
+    position: absolute;
+    width: 148px;
+    height: 39px;
+    top: 5px;
+    left: 0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 130;
+}
+.stay {
+    position: relative;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.cation {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.about-us {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+    width: 82px;
+    height: 24px;
+    top: 12px;
+    left: 1002px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: right;
+    white-space: nowrap;
+    z-index: 126;
+}
+.rectangle-2 {
+    position: relative;
+    width: 1440px;
+    height: 1px;
+    margin: 14px 0 0 0;
+    background: #e5e5e5;
+    z-index: 129;
+}
+.flex-row-e {
+    position: relative;
+    width: 1140px;
+    height: 458px;
+    margin: 69px 0 0 150px;
+    z-index: 119;
+}
+.forget-busy-work {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 422px;
+    height: 126px;
+    top: 0;
+    left: 0;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 63px;
+    text-align: left;
+    text-overflow: initial;
+    z-index: 102;
+    overflow: hidden;
+}
+.picture {
+    position: absolute;
+    width: 520px;
+    height: 410.625px;
+    top: 0;
+    left: 581px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 119;
+    border-radius: 0 30px 0 30px;
+}
+.rectangle-3 {
+    position: absolute;
+    width: 506px;
+    height: 398.25px;
+    top: 51.75px;
+    left: 634px;
+    border: 2px solid #e5e5e5;
+    z-index: 118;
+    border-radius: 15px;
+}
+.we-provide {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 333px;
+    height: 81px;
+    top: 146px;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+    z-index: 103;
+}
+.bg-4 {
+    position: absolute;
+    width: 18.42%;
+    height: 10.92%;
+    top: 56.11%;
+    left: 0;
+    background: #3252df;
+    z-index: 105;
+    border-radius: 4px;
+    box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
+}
+.show-me-now-5 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 106;
+}
+.ic-traveler {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 389px;
+    left: 0;
+    background: url(assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 108;
+}
+.ic-treasure {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 389px;
+    left: 178px;
+    background: url(assets/images/ic_treasure.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 114;
+}
+.ic-cities {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 389px;
+    left: 329px;
+    background: url(assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 111;
+}
+.travelers-div {
+    position: absolute;
+    width: 127px;
+    height: 27px;
+    top: 431px;
+    left: 0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 109;
+}
+.span-1 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.span-2 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.treasure-div {
+    position: absolute;
+    width: 100px;
+    height: 27px;
+    top: 431px;
+    left: 179px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 115;
+}
+.span-3 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.span-4 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.cities-div {
+    position: absolute;
+    width: 83px;
+    height: 27px;
+    top: 431px;
+    left: 330px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 112;
+}
+.span-5 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.span-6 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.most-picked-span {
+    display: block;
+    position: relative;
+    height: 36px;
+    margin: 70px 0 0 149px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 24;
+}
+.flex-row-div {
+    position: relative;
+    width: 1141px;
+    height: 460px;
+    margin: 20px 0 0 150px;
+    z-index: 67;
+}
+.rectangle-div {
+    position: absolute;
+    width: 361px;
+    height: 460px;
+    top: 0;
+    left: 0;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 27;
+    border-radius: 15px;
+}
+.rectangle-div-6 {
+    position: absolute;
+    width: 361px;
+    height: 460px;
+    top: 0;
+    left: 0;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 29;
+    border-radius: 15px;
+}
+.rectangle-div-7 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 180px;
+    height: 40px;
+    margin: 0 0 0 181px;
+    background: #ff498b;
+    z-index: 32;
+    border-radius: 0 15px 0 15px;
+}
+.per-night-div {
+    flex-shrink: 0;
+    position: relative;
+    width: 156px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 32;
+}
+.span-7 {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+}
+.span-8 {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: center;
+}
+.flex-column-f-div {
+    position: relative;
+    width: 166px;
+    height: 53px;
+    margin: 343px 0 0 24px;
+    font-size: 0px;
+    z-index: 34;
+    overflow: visible auto;
+}
+.blue-origin-fams-span {
+    display: block;
+    position: relative;
+    height: 30px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 33;
+}
+.jakarta-indonesia-span {
+    display: block;
+    position: relative;
+    height: 23px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 34;
+}
+.rectangle-div-8 {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 0;
+    left: 390px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 37;
+    border-radius: 15px;
+}
+.rectangle-div-9 {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 0;
+    left: 0;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 39;
+    border-radius: 15px;
+}
+.rectangle-div-a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 180px;
+    height: 40px;
+    margin: 0 0 0 181px;
+    background: #ff498b;
+    z-index: 44;
+    border-radius: 0 15px 0 15px;
+}
+.per-night-div-b {
+    flex-shrink: 0;
+    position: relative;
+    width: 156px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 44;
+}
+.span-9 {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+}
+.per-night {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: center;
+}
+.flex-column-ec {
+    position: relative;
+    width: 147px;
+    height: 53px;
+    margin: 98px 0 0 24px;
+    font-size: 0px;
+    z-index: 41;
+    overflow: visible auto;
+}
+.ocean-land {
+    display: block;
+    position: relative;
+    height: 30px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 40;
+}
+.bandung-indonesia {
+    display: block;
+    position: relative;
+    height: 23px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 41;
+}
+.rectangle-c {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 0;
+    left: 780px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 47;
+    border-radius: 15px;
+}
+.rectangle-d {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 0;
+    left: 0;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 49;
+    border-radius: 15px;
+}
+.rectangle-e {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 180px;
+    height: 40px;
+    margin: 0 0 0 181px;
+    background: #ff498b;
+    z-index: 52;
+    border-radius: 0 15px 0 15px;
+}
+.per-night-f {
+    flex-shrink: 0;
+    position: relative;
+    width: 156px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 52;
+}
+.dollar {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+}
+.per-night-10 {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: center;
+}
+.flex-column-fedf {
+    position: relative;
+    width: 135px;
+    height: 53px;
+    margin: 98px 0 0 24px;
+    font-size: 0px;
+    z-index: 54;
+    overflow: visible auto;
+}
+.stark-house {
+    display: block;
+    position: relative;
+    height: 30px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 53;
+}
+.malang-indonesia {
+    display: block;
+    position: relative;
+    height: 23px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 54;
+}
+.rectangle-11 {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 245px;
+    left: 390px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 57;
+    border-radius: 15px;
+}
+.rectangle-12 {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 0;
+    left: 0;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 59;
+    border-radius: 15px;
+}
+.rectangle-13 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 180px;
+    height: 40px;
+    margin: 0 0 0 181px;
+    background: #ff498b;
+    z-index: 63;
+    border-radius: 0 15px 0 15px;
+}
+.per-night-14 {
+    flex-shrink: 0;
+    position: relative;
+    width: 156px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 63;
+}
+.dollar-15 {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+}
+.per-night-16 {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: center;
+}
+.flex-column-ac {
+    position: relative;
+    width: 135px;
+    height: 53px;
+    margin: 98px 0 0 24px;
+    font-size: 0px;
+    z-index: 64;
+    overflow: visible auto;
+}
+.vinna-vill {
+    display: block;
+    position: relative;
+    height: 30px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 60;
+}
+.malang-indonesia-17 {
+    display: block;
+    position: relative;
+    height: 23px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 64;
+}
+.rectangle-18 {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 245px;
+    left: 780px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 67;
+    border-radius: 15px;
+}
+.rectangle-19 {
+    position: absolute;
+    width: 361px;
+    height: 215px;
+    top: 0;
+    left: 0;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 69;
+    border-radius: 15px;
+}
+.rectangle-1a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 180px;
+    height: 40px;
+    margin: 0 0 0 181px;
+    background: #ff498b;
+    z-index: 73;
+    border-radius: 0 15px 0 15px;
+}
+.per-night-1b {
+    flex-shrink: 0;
+    position: relative;
+    width: 156px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 73;
+}
+.dollar-1c {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+}
+.per-night-text {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: center;
+}
+.flex-column-fe {
+    position: relative;
+    width: 131px;
+    height: 53px;
+    margin: 98px 0 0 24px;
+    font-size: 0px;
+    z-index: 74;
+    overflow: visible auto;
+}
+.bobox {
+    display: block;
+    position: relative;
+    height: 30px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 70;
+}
+.medan-indonesia {
+    display: block;
+    position: relative;
+    height: 23px;
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 74;
+}
+.beauty-backyard {
+    display: block;
+    position: relative;
+    height: 36px;
+    margin: 70px 0 0 149px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 76;
+}
+.flex-row-b {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 1141px;
+    height: 180px;
+    margin: 20px 0 0 150px;
+    z-index: 97;
+}
+.flex-row-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-width: 1141px;
+    min-height: 280px;
+    margin: 20px 150px 0 150px;
+    z-index: 97;
+    flex-wrap: nowrap; /* Запобігає перенесенню блоків на новий рядок */
+    overflow-x: auto; /* Додає горизонтальний скроллбар, коли контент виходить за межі контейнера */
+    -webkit-overflow-scrolling: touch; /* Поліпшує прокрутку на тач-пристроях */
+    gap: 10px; /* Додає відстань між блоками */
+}
+.rectangle-1d {
+    flex-shrink: 0;
+    position: relative;
+    width: 263px;
+    height: 180px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 79;
+    border-radius: 15px;
+}
+.rectangle-1e {
+    position: relative;
+    width: 180px;
+    height: 40px;
+    margin: 0 0 0 83px;
+    background: #1885ff;
+    z-index: 81;
+    overflow: visible auto;
+    border-radius: 0 15px 0 15px;
+}
+.popular-choice {
+    position: relative;
+    width: 156px;
+    height: 27px;
+    margin: 6px 0 0 10px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: center;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 82;
+}
+.popular {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+}
+.choice {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: center;
+}
+.rectangle-1f {
+    flex-shrink: 0;
+    position: relative;
+    width: 263px;
+    height: 180px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 87;
+    border-radius: 15px;
+}
+.rectangle-20 {
+    flex-shrink: 0;
+    position: relative;
+    width: 263px;
+    height: 180px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 92;
+    border-radius: 15px;
+}
+.rectangle-21 {
+    flex-shrink: 0;
+    position: relative;
+    width: 263px;
+    height: 180px;
+    background: url(assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 97;
+    border-radius: 15px;
+}
+.flex-row-bbe {
+    position: relative;
+    width: auto;
+    height: 30px;
+    margin: 16px 0 0 150px;
+    z-index: 98;
+}
+.tabby-town {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 0;
+    left: 0;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 83;
+}
+.anggana {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 0;
+    left: 292px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 88;
+}
+.seattle-rain {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 0;
+    left: 585px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 93;
+}
+.wodden-pit {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 0;
+    left: 878px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 98;
+}
+.flex-row {
+    position: relative;
+    width: auto;
+    height: 23px;
+    margin: 0 0 0 150px;
+    z-index: 99;
+}
+.gunung-batu-indonesia {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 23px;
+    top: 0;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 84;
+}
+.bogor-indonesia {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 23px;
+    top: 0;
+    left: 292px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 89;
+}
+.jakarta-indonesia {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 23px;
+    top: 0;
+    left: 585px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 94;
+}
+.wonosobo-indonesia {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 23px;
+    top: 0;
+    left: 878px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 99;
+}
+.rectangle-22 {
+    position: relative;
+    width: 1440px;
+    height: 310px;
+    margin: 54px 0 0 0;
+    z-index: 2;
+    overflow: visible auto;
+}
+.rectangle-23 {
+    position: relative;
+    width: 1440px;
+    height: 1px;
+    margin: 0 0 0 0;
+    background: #e5e5e5;
+    z-index: 4;
+}
+.flex-row-abd {
+    position: relative;
+    width: 989px;
+    height: 39px;
+    margin: 50px 0 0 150px;
+    z-index: 19;
+}
+.staycation-24 {
+    position: absolute;
+    width: 147px;
+    height: 39px;
+    top: 0;
+    left: 0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 5;
+}
+.stay-25 {
+    position: relative;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.cation-26 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.for-beginners {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 390px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 9;
+}
+.explore-us {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 629px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 14;
+}
+.connect-us {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 852px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 19;
+}
+.flex-row-27 {
+    position: relative;
+    width: 1033px;
+    height: 56px;
+    margin: 8px 0 0 150px;
+    z-index: 21;
+}
+.kaboom-beauty-holiday {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 257px;
+    height: 48px;
+    top: 0;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    text-overflow: initial;
+    z-index: 6;
+    overflow: hidden;
+}
+.new-account {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 390px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 10;
+}
+.our-careers {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 629px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 15;
+}
+.support-email {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 852px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 20;
+}
+.start-booking-room {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 32px;
+    left: 390px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 11;
+}
+.privacy {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 32px;
+    left: 629px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 16;
+}
+.phone-number {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 32px;
+    left: 852px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 21;
+}
+.flex-row-c {
+    position: relative;
+    width: 687px;
+    height: 24px;
+    margin: 8px 0 0 540px;
+    z-index: 22;
+}
+.use-payments {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 12;
+}
+.terms-conditions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 239px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 17;
+}
+.staycation-kemang-jakarta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 462px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 22;
+}
+.copyright-all-rights-reserved {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 367px;
+    height: 24px;
+    margin: 50px 0 0 537px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 7;
+}
+
+.slider-row {
+    margin: 30px 150px 0 150px;
+}
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #3252df !important;
 }
