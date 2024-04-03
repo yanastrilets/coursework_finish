@@ -1,0 +1,113 @@
+.rectangle-block {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 1px 0 0 0;
+    background: #ffffff;
+    z-index: 122;
+    overflow: visible auto;
+}
+.rectangle-1d-block {
+    position: relative; /* Додає контекст позиціонування для абсолютно позиціонованих дочірніх елементів */
+    flex-shrink: 0;
+    width: 263px;
+    height: 180px;
+    z-index: 79;
+    border-radius: 15px;
+    overflow: hidden; /* Забезпечує, що всі внутрішні елементи не виходять за межі блоку */
+    object-fit: cover
+}
+.rectangle-1d-block img{
+    object-fit: cover
+}
+
+
+.rectangle-1e-block {
+    position: absolute; /* Робить .popular-choice абсолютно позиціонованим */
+    top: 0px; /* Встановлює відстань від верхньої межі .rectangle-1d-block */
+    left: 0;
+    right: 0;
+    width: 140px;
+    height: 40px;
+    background: #1885ff;
+    z-index: 89;
+    border-radius: 0px 10px 0 15px;
+    margin: 0 0 0 123px;
+}
+
+.popular-choice {
+    position: relative;
+    width: 120px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: center;
+    z-index: 82;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.popular {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: center;
+}
+.choice {
+    position: relative;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: center;
+}
+.flex-row-bbe2 {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: 30px;
+    text-align: left;
+}
+.flex-row2 {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: 23px;
+}
+.gunung-batu-indonesia {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    height: 23px;
+    top: 0;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    white-space: nowrap;
+}
+.tabby-town {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    height: 30px;
+    top: 3px;
+    left: 0;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+}
