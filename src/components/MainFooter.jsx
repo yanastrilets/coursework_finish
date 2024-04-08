@@ -1,5 +1,6 @@
+import React from "react";
 import './mainFooter.css';
-function mainFooter() {
+export const MainFooter = () =>{
     return (
         <div className='rectangle-2c'>
             <div className='rectangle-2d'/>
@@ -30,5 +31,3 @@ function mainFooter() {
         </div>
     );
 }
-
-export default mainFooter();

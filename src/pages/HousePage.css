@@ -1,0 +1,889 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container-housepage {
+    overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: 0;
+}
+
+.main-container {
+    position: relative;
+    width: 1440px;
+
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+}
+.flex-row-e2 {
+    position: relative;
+    width: 698px;
+    height: 54px;
+    margin: 39px 0 0 150px;
+    z-index: 4;
+}
+.house-name {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 256px;
+    height: 54px;
+    top: 0;
+    left: 442px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 4;
+}
+.catalog-house-details {
+    position: absolute;
+    width: 360px;
+    height: 24px;
+    top: 29px;
+    left: 0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 1;
+}
+.catalog-housepage {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+}
+.house-details {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+}
+.house-location {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 250px;
+    height: 24px;
+    margin: 4px 0 0 595px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 3;
+}
+.flex-row-housepage {
+    position: relative;
+    width: 1140px;
+    height: 500px;
+    margin: 50px 0 0 150px;
+    z-index: 11;
+}
+.rectangle-housepage {
+    position: absolute;
+    width: 643px;
+    height: 500px;
+    top: 0;
+    left: 0;
+    background: url(../assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 7;
+    border-radius: 15px;
+}
+.rectangle-1-housepage {
+    position: absolute;
+    width: 487px;
+    height: 245px;
+    top: 0;
+    left: 653px;
+    background: url(../assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 9;
+    border-radius: 15px;
+}
+.rectangle-2-housepage {
+    position: absolute;
+    width: 487px;
+    height: 245px;
+    top: 255px;
+    left: 653px;
+    background: url(../assets/images/karpaty_lviv.jpg)
+    no-repeat center;
+    background-size: cover;
+    z-index: 11;
+    border-radius: 15px;
+}
+.flex-row-3 {
+    position: relative;
+    width: 1140px;
+    height: 572px;
+    margin: 50px 0 0 150px;
+    z-index: 43;
+}
+.about-the-place {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 30px;
+    top: 0;
+    left: 0;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 13;
+}
+.rectangle-4 {
+    position: absolute;
+    width: 487px;
+    height: 550px;
+    top: 10px;
+    left: 653px;
+    font-size: 0px;
+    border: 1px solid #e5e5e5;
+    z-index: 43;
+    border-radius: 15px;
+}
+.start-booking {
+    display: block;
+    position: relative;
+    height: 30px;
+    margin: 61px 0 0 84px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 45;
+}
+.per-night {
+    position: relative;
+    width: 255px;
+    height: 54px;
+    margin: 15px 0 0 84px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 54px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 46;
+}
+.dollar {
+    position: relative;
+    color: #1abc9c;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 54px;
+    text-align: left;
+}
+.empty-space {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 54px;
+    text-align: left;
+}
+.per-night-5 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 275;
+    line-height: 54px;
+    text-align: left;
+}
+.stay-duration {
+    display: block;
+    position: relative;
+    height: 27px;
+    margin: 15px 0 0 84px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 48;
+}
+.rectangle-button {
+    position: relative;
+    width: 320px;
+    height: 45px;
+    margin: 9px 0 0 84px;
+    cursor: pointer;
+    background: #f5f6f8;
+    border: none;
+    z-index: 49;
+    border-radius: 4px;
+}
+.rectangle-6 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    background: #e74c3c;
+    z-index: 52;
+    border-radius: 4px;
+}
+.minus {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 12px;
+    height: 34px;
+    top: 5px;
+    left: 17.516px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 53;
+}
+.plus {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 0;
+    left: 275px;
+    background: #1abc9c;
+    z-index: 55;
+    border-radius: 4px;
+}
+.nights {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 12px;
+    height: 30px;
+    top: 5px;
+    left: 16.727px;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 56;
+}
+.pick-date {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 195px;
+    height: 27px;
+    top: 9px;
+    left: 63px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 50;
+}
+.pick-date-7 {
+    display: block;
+    position: relative;
+    height: 27px;
+    margin: 25px 0 0 84px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 58;
+}
+.rectangle-button-8 {
+    position: relative;
+    width: 320px;
+    height: 45px;
+    margin: 9px 0 0 84px;
+    cursor: pointer;
+    background: #f5f6f8;
+    border: none;
+    z-index: 59;
+    border-radius: 4px;
+}
+.calendar-icon {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 61;
+}
+.date-range {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 195px;
+    height: 27px;
+    top: 9px;
+    left: 63px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 60;
+}
+.pay-per-night {
+    position: relative;
+    width: 320px;
+    height: 27px;
+    margin: 15px 0 0 84px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 62;
+}
+.pay-text {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.pay-amount {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.pay-text-9 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.pay-amount-a {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.bg-housepage {
+    position: relative;
+    width: 320px;
+    height: 50px;
+    margin: 41px 0 0 84px;
+    background: #3252df;
+    z-index: 64;
+    border-radius: 4px;
+    box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
+}
+.continue-to-book {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 65;
+}
+.house-description {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 600px;
+    height: auto;
+    top: 40px;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+    z-index: 14;
+}
+.soul-infused-techno {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 600px;
+    height: 81px;
+    top: 185px;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+    z-index: 39;
+}
+.design-plan {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 600px;
+    height: 135px;
+    top: 276px;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+    z-index: 40;
+}
+.bedroom-icon {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 441px;
+    left: 0;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 16;
+}
+.livingroom-icon {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 441px;
+    left: 138px;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 22;
+}
+.bedroom-icon-b {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 441px;
+    left: 285px;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 28;
+}
+.diningroom-icon {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 441px;
+    left: 425px;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 34;
+}
+.bedroom {
+    position: absolute;
+    width: 89px;
+    height: 27px;
+    top: 487px;
+    left: 0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 17;
+}
+.five {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.bedroom-c {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.living-room {
+    position: absolute;
+    width: 97px;
+    height: 27px;
+    top: 487px;
+    left: 138px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 23;
+}
+.one {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.living-room-d {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.bathroom {
+    position: absolute;
+    width: 95px;
+    height: 27px;
+    top: 487px;
+    left: 285px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 29;
+}
+.three {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.bathroom-e {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.dining-room {
+    position: absolute;
+    width: 106px;
+    height: 27px;
+    top: 487px;
+    left: 425px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 35;
+}
+.one-f {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.dining-room-10 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.ic-wifi {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 534px;
+    left: 0;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 19;
+}
+.ic-ac {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 534px;
+    left: 138px;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 25;
+}
+.ic-kulkas {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 534px;
+    left: 285px;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 31;
+}
+.ic-tv {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 534px;
+    left: 425px;
+    background: url(../assets/images/ic_traveler.png)
+    no-repeat center;
+    background-size: cover;
+    z-index: 37;
+}
+.flex-row-11 {
+    position: relative;
+    width: 514px;
+    height: 27px;
+    margin: 8px 0 0 150px;
+    z-index: 38;
+}
+.mbp-s {
+    position: absolute;
+    width: 71px;
+    height: 27px;
+    top: 0;
+    left: 0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 20;
+}
+.span {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.mbp-s-12 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.unit-ready {
+    position: absolute;
+    width: 93px;
+    height: 27px;
+    top: 0;
+    left: 138px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 26;
+}
+.span-13 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.unit-ready-14 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.regroup-housepage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 229px;
+    height: 27px;
+    top: 0;
+    left: 285px;
+    z-index: 38;
+}
+.refigrator {
+    flex-shrink: 0;
+    position: relative;
+    width: 88px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 32;
+}
+.span-15 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.refigrator-16 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}
+.television {
+    flex-shrink: 0;
+    position: relative;
+    width: 89px;
+    height: 27px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 38;
+}
+.span-17 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27.2px;
+    text-align: left;
+}
+.television-18 {
+    position: relative;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27.2px;
+    text-align: left;
+}

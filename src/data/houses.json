@@ -1,0 +1,44 @@
+{
+  "housesData": [
+    {
+      "id": 1,
+      "price": "$120",
+      "houseName": "Cozy Cabin",
+      "location": "Aspen, Colorado",
+      "img": "https://a0.muscache.com/im/pictures/21f1bd4d-cac0-47a0-84d3-a6413f675003.jpg?im_w=1200",
+      "description": "A cozy cabin nestled in the woods, perfect for a weekend getaway."
+    },
+    {
+      "id": 2,
+      "price": "$200",
+      "houseName": "Beachfront Villa",
+      "location": "Malibu, California",
+      "img": "https://a0.muscache.com/im/pictures/21f1bd4d-cac0-47a0-84d3-a6413f675003.jpg?im_w=1200",
+      "description": "Luxurious beachfront villa with panoramic ocean views and private beach access."
+    },
+    {
+      "id": 3,
+      "price": "$90",
+      "houseName": "Country Cottage",
+      "location": "Savannah, Georgia",
+      "img": "https://a0.muscache.com/im/pictures/21f1bd4d-cac0-47a0-84d3-a6413f675003.jpg?im_w=1200",
+      "description": "Charming country cottage surrounded by nature, a peaceful retreat for relaxation."
+    },
+    {
+      "id": 4,
+      "price": "$150",
+      "houseName": "Mountain Lodge",
+      "location": "Boulder, Colorado",
+      "img": "https://a0.muscache.com/im/pictures/21f1bd4d-cac0-47a0-84d3-a6413f675003.jpg?im_w=1200",
+      "description": "Mountain lodge with stunning views of the Rockies, ideal for hiking enthusiasts."
+    },
+    {
+      "id": 5,
+      "price": "$250",
+      "houseName": "Urban Flat",
+      "location": "New York, New York",
+      "img": "https://a0.muscache.com/im/pictures/21f1bd4d-cac0-47a0-84d3-a6413f675003.jpg?im_w=1200",
+      "description": "Modern urban flat in the heart of New York City, close to all major attractions."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "carouselData": [
+    {
+      "src": "https://picsum.photos/seed/img1/600/400",
+      "alt": "Image 1 for carousel"
+    },
+    {
+      "src": "https://a0.muscache.com/im/pictures/21f1bd4d-cac0-47a0-84d3-a6413f675003.jpg?im_w=1200",
+      "alt": "Image 2 for carousel"
+    },
+    {
+      "src": "https://picsum.photos/seed/img3/600/400",
+      "alt": "Image 3 for carousel"
+    }
+  ]
+}

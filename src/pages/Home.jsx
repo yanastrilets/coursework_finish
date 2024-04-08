@@ -1,12 +1,14 @@
-import './App.css';
+import '../App.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {MainHeader} from './mainHeader';
-import houseBlock from "./houseBlock";
-import mainFooter from "./mainFooter";
-import {HouseBlock} from "./houseBlock";
-import psyacha_dushova from "./assets/images/karpaty_lviv.jpg";
+import {MainHeader} from '../components/mainHeader';
+import houseBlock from "../components/houseBlock";
+import {MainFooter} from "../components/MainFooter";
+import {HouseBlock} from "../components/houseBlock";
+import psyacha_dushova from "../assets/images/karpaty_lviv.jpg";
+
+import housesData from "../data/houses.json";
 export const Home = () => {
     const blocks = [1, 2, 3];
     const settings = {
@@ -16,7 +18,7 @@ export const Home = () => {
         slidesToShow: 4,
         slidesToScroll: 1
     };
-    const housesData = [
+    const housesData2 = [
         {
             price: "$120",
             houseName: "Cozy Cabin",
@@ -54,13 +56,15 @@ export const Home = () => {
         <div className='slider-row'>
             <div className='w-3/4 m-auto'>
                 <Slider {...settings}>
-                    {housesData.map((house, index) => (
-                        <HouseBlock
-                            key={index}
-                            price={house.price}
-                            houseName={house.houseName}
-                            location={house.location}
-                            image={house.img}
+                    {housesData.housesData.map((house, index) => (
+                        <HouseBlock key={index}
+                            data={house}
+
+                            // key={index}
+                            // price={house.price}
+                            // houseName={house.houseName}
+                            // location={house.location}
+                            // image={house.img}
                         />
                     ))}
                 </Slider>
@@ -200,8 +204,6 @@ export const Home = () => {
             <span className='jakarta-indonesia'>Jakarta, Indonesia</span>
             <span className='wonosobo-indonesia'>Wonosobo, Indonesia</span>
         </div>
-
-        <mainFooter/>
-        {mainFooter}
+        <MainFooter/>
     </div>
 }
