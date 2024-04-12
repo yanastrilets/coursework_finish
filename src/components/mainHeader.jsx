@@ -10,10 +10,10 @@ export const MainHeader = () => {
             </div>
             <div className='regroup'>
                 <div className='home'>
-                    <span className='home-1'>Home</span>
+                    <Link to='/' className='home-1'>Home</Link>
                     <span className='nbsp'> </span>
                 </div>
-                <span className='catalog'>Catalog</span>
+                <Link to='/catalogue' className='catalog'>Catalog</Link>
             </div>
             <div className='staycation'>
                 <span className='stay'>Stay</span>

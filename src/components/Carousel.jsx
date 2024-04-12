@@ -1,97 +1,33 @@
-// import React, { useState } from "react";
-// import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-//
-// import "./Carousel.css";
-//
-// export const Carousel = ({ data }) => {
-//     const [slide, setSlide] = useState(0);
-//
-//     const nextSlide = () => {
-//         setSlide(slide === data.length - 1 ? 0 : slide + 1);
-//     };
-//
-//     const prevSlide = () => {
-//         setSlide(slide === 0 ? data.length - 1 : slide - 1);
-//     };
-//
-//     return (
-//         <div className="container-carousel">
-//             <div className="carousel">
-//                 <BsArrowLeftCircleFill onClick={prevSlide} className="arrow arrow-left"/>
-//                 {data.map((item, idx) => {
-//                     return (
-//                         <img
-//                             src={item.src}
-//                             alt={item.alt}
-//                             key={idx}
-//                             className={slide === idx ? "slide" : "slide slide-hidden"}
-//                         />
-//                     );
-//                 })}
-//                 <BsArrowRightCircleFill
-//                     onClick={nextSlide}
-//                     className="arrow arrow-right"
-//                 />
-//                 <span className="indicators">
-//         {data.map((_, idx) => {
-//             return (
-//                 <button
-//                     key={idx}
-//                     className={
-//                         slide === idx ? "indicator" : "indicator indicator-inactive"
-//                     }
-//                     onClick={() => setSlide(idx)}
-//                 ></button>
-//             );
-//         })}
-//       </span>
-//             </div>
-//         </div>
-//
-//     );
-// };
-
+import Carousel from 'react-bootstrap/Carousel';
 import React, { useState } from "react";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-import "./Carousel.css"; // Переконайтеся, що шлях до файлу CSS вказаний правильно
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export const Carousel = ({ data }) => {
-    const [slide, setSlide] = useState(0);
-
-    const nextSlide = () => {
-        const nextIndex = slide === data.length - 1 ? 0 : slide + 1;
-        setSlide(nextIndex);
-    };
-
-    const prevSlide = () => {
-        const prevIndex = slide === 0 ? data.length - 1 : slide - 1;
-        setSlide(prevIndex);
-    };
-
+export const MyCarousel = ({ data }) => {
     return (
-        <div className="container-carousel">
-            <div className="carousel">
-                <BsArrowLeftCircleFill onClick={prevSlide} className="arrow arrow-left"/>
-                {data.map((item, idx) => (
-                    <img
-                        src={item.src}
-                        alt={item.alt}
-                        key={idx}
-                        className={slide === idx ? "slide active" : "slide"}
-
-                    />
-                ))}
-                <BsArrowRightCircleFill onClick={nextSlide} className="arrow arrow-right"/>
-                <div className="indicators">
-                    {data.map((_, idx) => (
-                        <button
-                            key={idx}
-                            className={slide === idx ? "indicator" : "indicator indicator-inactive"}
-                            onClick={() => setSlide(idx)}
-                        />
-                    ))}
-                </div>
-            </div>
-        </div>
+        <Carousel>
+            <Carousel.Item>
+                <img src={data[0].src}></img>
+                <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img src={data[1].src}></img>
+                <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img src={data[2].src}></img>
+                <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel>
     );
 };

@@ -3,26 +3,23 @@ import { useParams } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './HousePage.css';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-import { Carousel } from "../components/Carousel";
+import { MyCarousel } from "../components/Carousel";
 
 import carouselData from "../data/carouselData.json";
 import housesData from "../data/houses.json";
 export const HousePage = () =>{
-    //let { id } = useParams(); // Отримуємо id будинку з URL
-
     const { id } = useParams();
-    const numericId = parseInt(id, 10); // Перетворення рядка `id` в число
+    const numericId = parseInt(id, 10);
     console.log(numericId);
-// Потім використовуємо numericId для пошуку
     const houseInfo = housesData.housesData.find(house => house.id === numericId);
     console.log(houseInfo);
-    // Перевіряємо, чи існує будинок з таким id
+    let nights = 1;
     if (!houseInfo) {
         return <p>House not found!</p>;
     }
     return (
         <div className='main-container-housepage'>
-            <Carousel data={carouselData.carouselData} />
+
             <div className='flex-row-e2'>
                 <span className='house-name'>{houseInfo.houseName}</span>
                 <div className='catalog-house-details'>
@@ -31,10 +28,8 @@ export const HousePage = () =>{
                 </div>
             </div>
             <span className='house-location'>{houseInfo.location}</span>
-            <div className='flex-row-housepage'>
-                <div className='rectangle-housepage'/>
-                <div className='rectangle-1-housepage'/>
-                <div className='rectangle-2-housepage'/>
+            <div className="my-carousel">
+                <MyCarousel data={carouselData.carouselData}/>
             </div>
             <div className='flex-row-3'>
                 <span className='about-the-place'>About the place</span>
@@ -53,7 +48,7 @@ export const HousePage = () =>{
                         <div className='plus'>
                             <span className='nights'>+</span>
                         </div>
-                        <span className='pick-date'>2 nights</span>
+                        <span className='pick-date'>{nights} nights</span>
                     </button>
                     <span className='pick-date-7'>Pick a Date</span>
                     <button className='rectangle-button-8'>

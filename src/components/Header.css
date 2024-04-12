@@ -1,0 +1,78 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container-header {
+    overflow: hidden;
+}
+
+.main-container-header,
+.main-container-header * {
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: 0;
+}
+
+.main-container-header {
+    position: relative;
+    width: 1440px;
+    height: 80px;
+    margin: 0 auto;
+}
+.rectangle-header {
+    position: absolute;
+    width: 1440px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    z-index: 1;
+}
+.staycation-11 {
+    position: relative;
+    width: 147px;
+    height: 39px;
+    margin: 20px 0 0 647px;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 4;
+}
+.stay {
+    position: relative;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.cation {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.rectangle-111 {
+    position: relative;
+    width: 1440px;
+    height: 1px;
+    margin: 20px 0 0 0;
+    background: #e5e5e5;
+    z-index: 3;
+}

@@ -887,3 +887,12 @@ button {
     line-height: 27.2px;
     text-align: left;
 }
+
+.my-carousel{
+    width: 850px;
+    display: flex;
+    justify-content: center; /* Центрування по горизонталі */
+    align-items: center; /* Центрування по вертикалі */
+    margin-left: 300px;
+    margin-top: 20px;
+}
