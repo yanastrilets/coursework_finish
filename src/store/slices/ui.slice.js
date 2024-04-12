@@ -1,7 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    searchValue:"fghjkl"
+    searchValue:"fghjkl",
+    user: null,
 }
 const ui = createSlice(
     {
@@ -10,6 +11,9 @@ const ui = createSlice(
         reducers: {
             setSearchValue(state, action){
                 state.searchValue = action.payload;
+            },
+            setUser(state, action){
+                state.user = action.payload;
             }
         }
     }

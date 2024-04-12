@@ -2,32 +2,30 @@ import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './HousePage.css';
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { MyCarousel } from "../components/Carousel";
-
 import carouselData from "../data/carouselData.json";
-import housesData from "../data/houses.json";
+import {useGetApartmentByIdQuery} from "../store/api/api";
 export const HousePage = () =>{
     const { id } = useParams();
-    const numericId = parseInt(id, 10);
-    console.log(numericId);
-    const houseInfo = housesData.housesData.find(house => house.id === numericId);
-    console.log(houseInfo);
-    let nights = 1;
-    if (!houseInfo) {
+    const {data: house} = useGetApartmentByIdQuery(id);
+
+    if (!house) {
         return <p>House not found!</p>;
     }
+
+    console.log(house);
+    const location = house.address.country + ", " + house.address.city;
     return (
         <div className='main-container-housepage'>
 
             <div className='flex-row-e2'>
-                <span className='house-name'>{houseInfo.houseName}</span>
+                <span className='house-name'>{house.house_name}</span>
                 <div className='catalog-house-details'>
                     <span className='catalog-housepage'>Catalog / </span>
                     <span className='house-details'>House Details</span>
                 </div>
             </div>
-            <span className='house-location'>{houseInfo.location}</span>
+            <span className='house-location'>{location}</span>
             <div className="my-carousel">
                 <MyCarousel data={carouselData.carouselData}/>
             </div>
@@ -36,7 +34,7 @@ export const HousePage = () =>{
                 <div className='rectangle-4'>
                     <span className='start-booking'>Start Booking</span>
                     <div className='per-night'>
-                        <span className='dollar'>{houseInfo.price}</span>
+                        <span className='dollar'>{house.price_per_night}</span>
                         <span className='empty-space'> </span>
                         <span className='per-night-5'>per night</span>
                     </div>
@@ -48,7 +46,7 @@ export const HousePage = () =>{
                         <div className='plus'>
                             <span className='nights'>+</span>
                         </div>
-                        <span className='pick-date'>{nights} nights</span>
+                        {/*<span className='pick-date'>{nights} nights</span>*/}
                     </button>
                     <span className='pick-date-7'>Pick a Date</span>
                     <button className='rectangle-button-8'>
@@ -65,14 +63,14 @@ export const HousePage = () =>{
                         <span className='continue-to-book'>Continue to Book</span>
                     </div>
                 </div>
-                <span className='house-description'>{houseInfo.description}</span>
+                <span className='house-description'>{house.description}</span>
 
                 <div className='bedroom-icon'/>
                 <div className='livingroom-icon'/>
                 <div className='bedroom-icon-b'/>
                 <div className='diningroom-icon'/>
                 <div className='bedroom'>
-                    <span className='five'>5</span>
+                    <span className='five'>{house.count_of_room}</span>
                     <span className='bedroom-c'> bedroom</span>
                 </div>
                 <div className='living-room'>
@@ -80,38 +78,16 @@ export const HousePage = () =>{
                     <span className='living-room-d'> living room</span>
                 </div>
                 <div className='bathroom'>
-                    <span className='three'>3</span>
+                    <span className='three'>{house.count_of_bathroom}</span>
                     <span className='bathroom-e'> bathroom</span>
                 </div>
                 <div className='dining-room'>
-                    <span className='one-f'>1</span>
+                    <span className='one-f'>{house.count_of_kitchen}</span>
                     <span className='dining-room-10'> dining room</span>
                 </div>
-                <div className='ic-wifi'/>
-                <div className='ic-ac'/>
-                <div className='ic-kulkas'/>
-                <div className='ic-tv'/>
+
             </div>
-            <div className='flex-row-11'>
-                <div className='mbp-s'>
-                    <span className='span'>10</span>
-                    <span className='mbp-s-12'> mbp/s</span>
-                </div>
-                <div className='unit-ready'>
-                    <span className='span-13'>7</span>
-                    <span className='unit-ready-14'> unit ready</span>
-                </div>
-                <div className='regroup-housepage'>
-                    <div className='refigrator'>
-                        <span className='span-15'>2</span>
-                        <span className='refigrator-16'> refigrator</span>
-                    </div>
-                    <div className='television'>
-                        <span className='span-17'>4</span>
-                        <span className='television-18'> television</span>
-                    </div>
-                </div>
-            </div>
+
         </div>
     );
 }

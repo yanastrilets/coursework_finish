@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import './Login.css';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useGetAuthTokenMutation} from "../store/api/api";
+import {useDispatch} from "react-redux";
+import {uiActions} from "../store/slices/ui.slice";
 
 export const Login = () => {
-    // Стани для зберігання значень інпутів
-    const [email, setEmail] = useState('');
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [handleAuth] = useGetAuthTokenMutation();
 
-    // Функція для обробки натискання на кнопку "Sign in"
-    const handleSignIn = (e) => {
-        e.preventDefault(); // Запобігаємо стандартній поведінці форми
-        console.log('Email:', email, 'Password:', password); // Тут можна додати логіку відправки даних
+    const handleSignIn = async (e) => {
+        e.preventDefault();
+        const res = await handleAuth({username, password});
+        if(res.error) { return;}
+        const token = res.data['access_token'];
+        const user = res.data.user;
+        localStorage.setItem('token', token);
+        dispatch(uiActions.setUser(user))
+        navigate('/');
     };
 
     return (
@@ -33,8 +43,8 @@ export const Login = () => {
                                             <input
                                                 type='text'
                                                 placeholder='Enter email'
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
+                                                value={username}
+                                                onChange={(e) => setUsername(e.target.value)}
                                                 className='login-input'
                                             />
                                         </div>

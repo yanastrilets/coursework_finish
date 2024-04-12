@@ -1,11 +1,14 @@
 import React from "react";
 import {MainHeader} from "../components/mainHeader";
 import {MainFooter} from "../components/MainFooter";
-import houses from "../data/houses.json";
 import {Catalogue} from "../components/Catalogue";
 import {SearchBar} from "../components/SearchBar";
 import "../pages/CataloguePage.css"
+import {useGetApartmentsQuery} from "../store/api/api";
+import {useSelector} from "react-redux";
 export const CataloguePage = () =>{
+    const {data: houses} = useGetApartmentsQuery();
+    const {searchValue} = useSelector(state => state.ui);
     return(
         <div>
             <MainHeader/>
@@ -15,7 +18,7 @@ export const CataloguePage = () =>{
                 </div>
                 <div className="catalogue">
                     <SearchBar/>
-                    <Catalogue data={houses.housesData}/>
+                    {houses && <Catalogue data={houses.filter(h => h.house_name.includes(searchValue))}/>}
                 </div>
             </div>
 
