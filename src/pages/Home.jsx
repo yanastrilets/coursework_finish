@@ -9,6 +9,7 @@ import psyacha_dushova from "../assets/images/karpaty_lviv.jpg";
 import {useDispatch} from "react-redux";
 import {useGetApartmentsByRatingQuery, useGetUserQuery} from "../store/api/api";
 import {uiActions} from "../store/slices/ui.slice";
+import {Link} from "react-router-dom";
 export const Home = () => {
     const {data: topRatingHouses} = useGetApartmentsByRatingQuery();
     const {data: user} = useGetUserQuery();
@@ -62,14 +63,11 @@ export const Home = () => {
             <div className='w-3/4 m-auto'>
                 <Slider {...settings}>
                     {topRatingHouses && topRatingHouses.map((house, index) => (
-                        <HouseBlock key={index}
-                            data={house}
-                            // key={index}
-                            // price={house.price}
-                            // houseName={house.houseName}
-                            // location={house.location}
-                            // image={house.img}
-                        />
+                        <Link to={`/catalogue/${house.id}`} key={index}>
+                            <HouseBlock
+                                data={house}
+                            />
+                        </Link>
                     ))}
                 </Slider>
             </div>

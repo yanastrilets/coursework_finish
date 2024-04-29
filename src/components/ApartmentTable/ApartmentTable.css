@@ -1,0 +1,8 @@
+.apartment-table-main-component{
+    min-height: 600px;
+    min-width: 1130px;
+}
+.div-number-of-flat-house{
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,120 @@
+.reg-inputs{
+
+}
+.landlord-reg-header {
+    position: relative;
+    width: 373px;
+    height: 82px;
+    margin: 0 auto;
+    font-size: 0px;
+}
+.landlord-reg-information {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 373px;
+    height: 54px;
+    margin: 0 0 0 0;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+}
+.landlord-reg-fill-up-fields {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 325px;
+    height: 24px;
+    margin: 4px 0 0 31px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+}
+.landlord-reg-buttons {
+    position: relative;
+    width: 765px;
+    height: 50px;
+    margin: 0 auto;
+}
+.landlord-reg-cancel {
+    position: absolute;
+    width: 39.22%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #f5f6f8;
+    z-index: 1;
+    border-radius: 4px;
+}
+.cancel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #b3b3b3;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 2;
+}
+.landlord-reg-next {
+    position: absolute;
+    width: 39.22%;
+    height: 100%;
+    top: 0;
+    left: 60.78%;
+    background: #3252df;
+    z-index: 4;
+    border-radius: 4px;
+    box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
+}
+.landlord-reg-continue-to-book {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+}
+.landlord-reg-text-above-input {
+    display: block;
+    position: relative;
+    height: 27px;
+    margin: 0 0 0 0;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 1;
+}

@@ -33,7 +33,7 @@ button {
     position: relative;
     width: 698px;
     height: 54px;
-    margin: 39px 0 0 150px;
+    margin: 12px 0 0 150px;
     z-index: 4;
 }
 .house-name {
@@ -54,11 +54,20 @@ button {
     white-space: nowrap;
     z-index: 4;
 }
+.row-carousel-startbooking {
+    display: flex;           /* Застосовуємо flexbox */
+    flex-direction: row;     /* Елементи розміщуються по горизонталі */
+    align-items: flex-start;     /* Вирівнювання елементів по вертикальній осі на центр */
+    justify-content: center; /* Зміна розподілу простору між елементами */
+    flex-wrap: nowrap;       /* Запобігає перенесенню елементів на новий рядок */
+    padding: 0 20px;         /* Відступи з боків */
+    gap: 5px;               /* Відстань між елементами всередині контейнера */
+}
 .catalog-house-details {
     position: absolute;
     width: 360px;
     height: 24px;
-    top: 29px;
+    top: 15px;
     left: 0;
     font-family: Poppins, var(--default-font-family);
     font-size: 18px;
@@ -94,7 +103,7 @@ button {
     position: relative;
     width: 250px;
     height: 24px;
-    margin: 4px 0 0 595px;
+    margin: 4px 0 15px 595px;
     color: #b0b0b0;
     font-family: Poppins, var(--default-font-family);
     font-size: 18px;
@@ -148,20 +157,21 @@ button {
     border-radius: 15px;
 }
 .flex-row-3 {
-    position: relative;
-    width: 1140px;
-    height: 572px;
-    margin: 50px 0 0 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Вирівнювання елементів по лівому краю */
+    width: 100%;              /* Забезпечення того, що контейнер займає всю можливу ширину */
+    padding: 10px;
+
     z-index: 43;
 }
 .about-the-place {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    position: absolute;
+
     height: 30px;
-    top: 0;
-    left: 0;
+
     color: #152c5b;
     font-family: Poppins, var(--default-font-family);
     font-size: 20px;
@@ -172,21 +182,32 @@ button {
     z-index: 13;
 }
 .rectangle-4 {
-    position: absolute;
-    width: 487px;
-    height: 550px;
-    top: 10px;
-    left: 653px;
+    position: relative;
+
+    min-height: 487px;
+    width: 470px;
+    margin-left: 30px;
+    padding-bottom: 30px;
     font-size: 0px;
     border: 1px solid #e5e5e5;
     z-index: 43;
     border-radius: 15px;
 }
+.text-price{
+    display: flex;
+    flex-direction: row; /* Вирівнювання дочірніх елементів в рядок */
+    justify-content: center; /* Центрування елементів по горизонталі */
+    align-items: center; /* Центрування елементів по вертикалі */
+    width: 90%; /* Заповнення всієї ширини батьківського елемента */
+    padding: 10px 0px; /* Додавання верхнього та нижнього відступів для візуального комфорту */
+    gap: 84px; /* Відстань між дочірніми елементами */
+    margin: 0px 0 0 20px;
+}
 .start-booking {
     display: block;
     position: relative;
     height: 30px;
-    margin: 61px 0 0 84px;
+    margin-top: 10px;
     color: #152c5b;
     font-family: Poppins, var(--default-font-family);
     font-size: 20px;
@@ -196,52 +217,46 @@ button {
     white-space: nowrap;
     z-index: 45;
 }
-.per-night {
+.per-night-book {
     position: relative;
     width: 255px;
     height: 54px;
-    margin: 15px 0 0 84px;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 54px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 46;
-}
-.dollar {
-    position: relative;
-    color: #1abc9c;
+
     font-family: Poppins, var(--default-font-family);
     font-size: 36px;
     font-weight: 500;
-    line-height: 54px;
-    text-align: left;
+    line-height: 50px;
+    text-align: right;
+    white-space: nowrap;
+    z-index: 46;
 }
-.empty-space {
+.dollar-book {
     position: relative;
-    color: #152c5b;
+    color: #023a7c;
     font-family: Poppins, var(--default-font-family);
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 54px;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 50px;
     text-align: left;
+    white-space: nowrap;
+    width: 150px;      /* Нова ширина для більшої області ціни */
 }
+
 .per-night-5 {
     position: relative;
     color: #b0b0b0;
     font-family: Poppins, var(--default-font-family);
-    font-size: 36px;
-    font-weight: 275;
-    line-height: 54px;
-    text-align: left;
+    font-size: 24px;   /* Зменшено для меншого тексту */
+    font-weight: 275;  /* Було збережено */
+    line-height: 36px; /* Пропорційно зменшено з урахуванням нового розміру шрифту */
+    text-align: left;  /* Було збережено */
 }
+
 .stay-duration {
     display: block;
     position: relative;
     height: 27px;
-    margin: 15px 0 0 84px;
+    margin: 6px 0 0 0px;
     color: #152c5b;
     font-family: Poppins, var(--default-font-family);
     font-size: 16px;
@@ -251,96 +266,29 @@ button {
     white-space: nowrap;
     z-index: 48;
 }
-.rectangle-button {
-    position: relative;
-    width: 320px;
-    height: 45px;
-    margin: 9px 0 0 84px;
-    cursor: pointer;
-    background: #f5f6f8;
-    border: none;
-    z-index: 49;
-    border-radius: 4px;
+.hr-housepage{
+    width: 470px; /* Ширина лінії */
+    height: 1px; /* Довжина лінії */
+    background-color: gray; /* Колір лінії */
+    border: none; /* Видалення стандартного бордюра */
+    margin-top: 10px;
 }
-.rectangle-6 {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: 0;
-    left: 0;
-    background: #e74c3c;
-    z-index: 52;
-    border-radius: 4px;
-}
-.minus {
+.booking-controls {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 12px;
-    height: 34px;
-    top: 5px;
-    left: 17.516px;
-    color: #ffffff;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 34px;
-    text-align: center;
-    white-space: nowrap;
-    z-index: 53;
+    justify-content: flex-start;
+    margin-left: 20px;
+    gap: 90px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
-.plus {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: 0;
-    left: 275px;
-    background: #1abc9c;
-    z-index: 55;
-    border-radius: 4px;
-}
-.nights {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 12px;
-    height: 30px;
-    top: 5px;
-    left: 16.727px;
-    color: #ffffff;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 30px;
-    text-align: center;
-    white-space: nowrap;
-    z-index: 56;
-}
-.pick-date {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 195px;
-    height: 27px;
-    top: 9px;
-    left: 63px;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 27px;
-    text-align: center;
-    white-space: nowrap;
-    z-index: 50;
-}
+
 .pick-date-7 {
     display: block;
     position: relative;
     height: 27px;
-    margin: 25px 0 0 84px;
+    margin: 10px 0 10px 20px;
     color: #152c5b;
     font-family: Poppins, var(--default-font-family);
     font-size: 16px;
@@ -350,51 +298,21 @@ button {
     white-space: nowrap;
     z-index: 58;
 }
-.rectangle-button-8 {
-    position: relative;
-    width: 320px;
-    height: 45px;
-    margin: 9px 0 0 84px;
-    cursor: pointer;
-    background: #f5f6f8;
-    border: none;
-    z-index: 59;
-    border-radius: 4px;
+
+.date-pick{
+
 }
-.calendar-icon {
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: 0;
-    left: 0;
-    background: url(../assets/images/ic_traveler.png)
-    no-repeat center;
-    background-size: cover;
-    z-index: 61;
-}
-.date-range {
+.container-date{
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 195px;
-    height: 27px;
-    top: 9px;
-    left: 63px;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 27px;
-    text-align: center;
-    white-space: nowrap;
-    z-index: 60;
+    flex-direction: row; /* Вирівнювання дочірніх елементів в рядок */
+    justify-content: center; /* Центрування елементів по горизонталі */
+    align-items: center; /* Центрування елементів по вертикалі */
 }
 .pay-per-night {
     position: relative;
     width: 320px;
     height: 27px;
-    margin: 15px 0 0 84px;
+    margin: 10px 0 0 80px;
     font-family: Poppins, var(--default-font-family);
     font-size: 16px;
     font-weight: 300;
@@ -444,13 +362,13 @@ button {
     position: relative;
     width: 320px;
     height: 50px;
-    margin: 41px 0 0 84px;
+    margin: 25px 0 0 77px;
     background: #3252df;
     z-index: 64;
     border-radius: 4px;
     box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
 }
-.continue-to-book {
+.continue-to-book-housepage {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -472,11 +390,8 @@ button {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    position: absolute;
     width: 600px;
     height: auto;
-    top: 40px;
-    left: 0;
     color: #b0b0b0;
     font-family: Poppins, var(--default-font-family);
     font-size: 16px;
@@ -485,407 +400,89 @@ button {
     text-align: left;
     z-index: 14;
 }
-.soul-infused-techno {
+
+.room-details {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    width: 600px;
-    height: 81px;
-    top: 185px;
-    left: 0;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-    z-index: 39;
+    align-items: center; /* Вирівнювання елементів по вертикальному центру */
+    white-space: nowrap; /* Запобігання переносу тексту на новий рядок */
 }
-.design-plan {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    width: 600px;
-    height: 135px;
-    top: 276px;
-    left: 0;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-    z-index: 40;
-}
+
 .bedroom-icon {
-    position: absolute;
+    position: relative;
     width: 38px;
     height: 38px;
-    top: 441px;
-    left: 0;
+    background-size: cover;
+    margin-bottom: 5px;
+
     background: url(../assets/images/ic_traveler.png)
     no-repeat center;
     background-size: cover;
     z-index: 16;
 }
 .livingroom-icon {
-    position: absolute;
+    position: relative;
     width: 38px;
     height: 38px;
-    top: 441px;
-    left: 138px;
+    background-size: cover;
+    margin-bottom: 5px;
+
     background: url(../assets/images/ic_traveler.png)
     no-repeat center;
     background-size: cover;
     z-index: 22;
 }
 .bedroom-icon-b {
-    position: absolute;
+    position: relative;
     width: 38px;
     height: 38px;
-    top: 441px;
-    left: 285px;
+    background-size: cover;
+    margin-bottom: 5px;
+
     background: url(../assets/images/ic_traveler.png)
     no-repeat center;
     background-size: cover;
     z-index: 28;
 }
 .diningroom-icon {
-    position: absolute;
+    position: relative;
     width: 38px;
     height: 38px;
-    top: 441px;
-    left: 425px;
+    background-size: cover;
+    margin-bottom: 5px;
     background: url(../assets/images/ic_traveler.png)
     no-repeat center;
     background-size: cover;
     z-index: 34;
 }
-.bedroom {
-    position: absolute;
-    width: 89px;
-    height: 27px;
-    top: 487px;
-    left: 0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 17;
-}
-.five {
-    position: relative;
+
+.num-of-room, .text-room {
+    display: flex; /* Змінити на flex для горизонтального вирівнювання */
+    align-items: center; /* Вирівнювання елементів по центру */
     color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
     font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
+    line-height: 1.7;
+    text-align: center;
 }
-.bedroom-c {
-    position: relative;
+
+.text-room {
     color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
+    margin-left: 4px; /* Додатковий відступ між числом і текстом */
 }
-.living-room {
-    position: absolute;
-    width: 97px;
-    height: 27px;
-    top: 487px;
-    left: 138px;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 23;
-}
-.one {
-    position: relative;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
-}
-.living-room-d {
-    position: relative;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-}
-.bathroom {
-    position: absolute;
-    width: 95px;
-    height: 27px;
-    top: 487px;
-    left: 285px;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 29;
-}
-.three {
-    position: relative;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
-}
-.bathroom-e {
-    position: relative;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-}
-.dining-room {
-    position: absolute;
-    width: 106px;
-    height: 27px;
-    top: 487px;
-    left: 425px;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 35;
-}
-.one-f {
-    position: relative;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
-}
-.dining-room-10 {
-    position: relative;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-}
-.ic-wifi {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    top: 534px;
-    left: 0;
-    background: url(../assets/images/ic_traveler.png)
-    no-repeat center;
-    background-size: cover;
-    z-index: 19;
-}
-.ic-ac {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    top: 534px;
-    left: 138px;
-    background: url(../assets/images/ic_traveler.png)
-    no-repeat center;
-    background-size: cover;
-    z-index: 25;
-}
-.ic-kulkas {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    top: 534px;
-    left: 285px;
-    background: url(../assets/images/ic_traveler.png)
-    no-repeat center;
-    background-size: cover;
-    z-index: 31;
-}
-.ic-tv {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    top: 534px;
-    left: 425px;
-    background: url(../assets/images/ic_traveler.png)
-    no-repeat center;
-    background-size: cover;
-    z-index: 37;
-}
-.flex-row-11 {
-    position: relative;
-    width: 514px;
-    height: 27px;
-    margin: 8px 0 0 150px;
-    z-index: 38;
-}
-.mbp-s {
-    position: absolute;
-    width: 71px;
-    height: 27px;
-    top: 0;
-    left: 0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 20;
-}
-.span {
-    position: relative;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
-}
-.mbp-s-12 {
-    position: relative;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-}
-.unit-ready {
-    position: absolute;
-    width: 93px;
-    height: 27px;
-    top: 0;
-    left: 138px;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 26;
-}
-.span-13 {
-    position: relative;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
-}
-.unit-ready-14 {
-    position: relative;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-}
-.regroup-housepage {
+.containers-of-details {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    width: 229px;
-    height: 27px;
-    top: 0;
-    left: 285px;
-    z-index: 38;
+    flex-direction: row;  /* Розташування елементів в ряд */
+    justify-content: space-around; /* Рівномірне розподілення вмісту по горизонталі */
+    align-items: center; /* Вирівнювання елементів по центру по вертикалі */
+    width: 100%; /* Встановлення ширини контейнера */
+    margin-top: 20px; /* Відступ зверху для контейнера */
 }
-.refigrator {
-    flex-shrink: 0;
-    position: relative;
-    width: 88px;
-    height: 27px;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 32;
-}
-.span-15 {
-    position: relative;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
-}
-.refigrator-16 {
-    position: relative;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
-}
-.television {
-    flex-shrink: 0;
-    position: relative;
-    width: 89px;
-    height: 27px;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27px;
-    text-align: left;
-    text-overflow: initial;
-    white-space: nowrap;
-    z-index: 38;
-}
-.span-17 {
-    position: relative;
-    color: #152c5b;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 27.2px;
-    text-align: left;
-}
-.television-18 {
-    position: relative;
-    color: #b0b0b0;
-    font-family: Poppins, var(--default-font-family);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 27.2px;
-    text-align: left;
+
+.rooms {
+    display: flex;
+    flex-direction: column; /* Вертикальне вирівнювання елементів */
+    align-items: center; /* Вирівнювання елементів по центру */
+    width: 97px; /* Ширина кожного блоку кімнати */
+    margin: 10px; /* Маржин навколо кожного блоку для відступів */
 }
 
 .my-carousel{
@@ -893,6 +490,64 @@ button {
     display: flex;
     justify-content: center; /* Центрування по горизонталі */
     align-items: center; /* Центрування по вертикалі */
-    margin-left: 300px;
-    margin-top: 20px;
+    margin-left: 10px;
+    /*margin-top: -50px;*/
 }
+
+.photo-and-info{
+    display: flex;
+    flex-direction: column; /* Вертикальне вирівнювання елементів */
+    align-items: center; /* Вирівнювання елементів по центру */
+}
+.rdrDateRangeWrapper {
+    display: flex;
+}
+
+.rdrDefinedRangesWrapper {
+    display: none; /* Скриває панель швидкого вибору */
+}
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrDayNumber span {*/
+/*    color: #ff6347; !* Томатний червоний *!*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.rdrDayDisabled:not(.rdrDayPassive):hover .rdrDayNumber span,*/
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrDayNumber span:hover {*/
+/*    background-color: #ff6347;*/
+/*    color: white;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrDayNumber span {*/
+/*    color: #ccc; !* Сірий колір для заблокованих дат *!*/
+/*    font-weight: normal;*/
+/*}*/
+
+/*.rdrDayDisabled:not(.rdrDayPassive):hover .rdrDayNumber span,*/
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrDayNumber span:hover {*/
+/*    background-color: #ccc;*/
+/*    color: #fff;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+/* Override styles for disabled dates */
+/*.rdrDayDisabled {*/
+/*    color: #ccc !important; !* Grey text to indicate disabled *!*/
+/*    background-color: #f9f9f9 !important; !* Light grey background *!*/
+/*    pointer-events: none; !* Disable mouse events *!*/
+/*}*/
+
+/*!* Ensure that disabled dates do not look active or selectable *!*/
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrInRange,*/
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrStartEdge,*/
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrEndEdge,*/
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrSelected,*/
+/*.rdrDayDisabled:not(.rdrDayPassive) .rdrDayNumber span {*/
+/*    color: #ccc !important; !* Match the text color with disabled style *!*/
+/*}*/
+
+/*!* This might be necessary if you have custom styling for other states *!*/
+/*.rdrDayDisabled:hover,*/
+/*.rdrDayDisabled:active {*/
+/*    background-color: #f9f9f9 !important; !* Keep background consistent on hover/active *!*/
+/*}*/

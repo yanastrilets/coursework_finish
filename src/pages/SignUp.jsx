@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import './SignUp.css';
 import {Link} from "react-router-dom";
+import {useCreateUserMutation} from "../store/api/api";
 
 export const SignUp = () => {
+    const [createUser] = useCreateUserMutation();
     // Стани для зберігання значень інпутів
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     // Функція для обробки натискання на кнопку "Sign in"
-    const handleSignIn = (e) => {
+    const handleSignIn = async (e) => {
         e.preventDefault(); // Запобігаємо стандартній поведінці форми
-        console.log('Email:', email, 'Password:', password); // Тут можна додати логіку відправки даних
+
+        const result = await createUser({username: email, password: password});
+        console.log(result);
     };
 
     return (

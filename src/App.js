@@ -15,6 +15,11 @@ import {Provider} from "react-redux";
 import {store} from "./store/store";
 import {SignUp} from "./pages/SignUp";
 import {FirstBookingPage} from "./pages/FirstBookingPage";
+import {AdminPage} from "./pages/AdminPage/AdminPage";
+import {LandlordRegistration} from "./pages/LandlordRegistration";
+import {SecondBookingPage} from "./pages/SecondBookingPage";
+import {EndBookingPage} from "./pages/EndBookingPage";
+import {UserProfile} from "./pages/UserProfile/UserProfile";
 
 function App() {
     return (
@@ -29,6 +34,11 @@ function App() {
                         <Route path='/catalogue/:id' element={<HousePage/>}></Route>
                         <Route path='/signup' element={<SignUp/>}></Route>
                         <Route path='/book' element={<FirstBookingPage/>}></Route>
+                        <Route path='/admin' element={<AdminPage/>}></Route>
+                        <Route path='/landlordreg' element={<LandlordRegistration/>}></Route>
+                        <Route path='/book2' element={<SecondBookingPage/>}></Route>
+                        <Route path='/endbooking' element={<EndBookingPage/>}></Route>
+                        <Route path='/profile' element={<UserProfile/>}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>

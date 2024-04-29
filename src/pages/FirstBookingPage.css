@@ -42,9 +42,9 @@
     display: flex;
     flex-direction: row; /* Вирівнювання дочірніх елементів в рядок */
     justify-content: center; /* Центрування елементів по горизонталі */
-    align-items: center; /* Центрування елементів по вертикалі */
-    width: 88%; /* Заповнення всієї ширини батьківського елемента */
-    padding: 20px 0; /* Додавання верхнього та нижнього відступів для візуального комфорту */
+    align-items: flex-start; /* Центрування елементів по вертикалі */
+    width: 100%; /* Заповнення всієї ширини батьківського елемента */
+    padding: 30px 0; /* Додавання верхнього та нижнього відступів для візуального комфорту */
     gap: 84px; /* Відстань між дочірніми елементами */
 }
 
@@ -83,6 +83,7 @@
 
     font-size: 0px;
     z-index: 5;
+    margin-bottom: 20px;
 }
 .podo-wae {
     display: block;
@@ -142,7 +143,7 @@
 }
 .hr-booking{
     width: 1px; /* Ширина лінії */
-    height: 300px; /* Довжина лінії */
+    height: 400px; /* Довжина лінії */
     background-color: gray; /* Колір лінії */
     border: none; /* Видалення стандартного бордюра */
 }
@@ -187,17 +188,18 @@
     z-index: 3;
 }
 .booking-buttons {
+    display: flex;
+    justify-content: flex-start;
     position: relative;
+
     width: 765px;
     height: 50px;
     margin: 0 auto;
 }
 .booking-cancel {
-    position: absolute;
-    width: 39.22%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    position: relative;
+    width: 210px;
+    height: 50px;
     background: #f5f6f8;
     z-index: 1;
     border-radius: 4px;
@@ -221,14 +223,12 @@
     z-index: 2;
 }
 .booking-next {
-    position: absolute;
-    width: 39.22%;
-    height: 100%;
-    top: 0;
-    left: 60.78%;
+    position: relative;
+    width: 210px;
+    height: 50px;
+    border-radius: 4px;
     background: #3252df;
     z-index: 4;
-    border-radius: 4px;
     box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
 }
 .continue-to-book {
@@ -248,4 +248,28 @@
     text-align: center;
     white-space: nowrap;
     z-index: 5;
+}
+
+.row-of-inputs{
+    display: flex;
+    flex-direction: row; /* Вирівнювання дочірніх елементів в рядок */
+    justify-content: flex-start; /* Центрування елементів по горизонталі */
+    align-items: flex-start; /* Центрування елементів по вертикалі */
+    gap: 30px;
+}
+.first_column-inputs{
+    width: 210px;
+}
+.booking-inputs{
+    justify-content: center; /* Центрування елементів по горизонталі */
+    align-items: flex-start; /* Центрування елементів по вертикалі */
+
+}
+.row-of-buttons{
+    display: flex;
+    flex-direction: row; /* Вирівнювання дочірніх елементів в рядок */
+    justify-content: flex-start; /* Центрування елементів по горизонталі */
+    align-items: flex-start; /* Центрування елементів по вертикалі */
+    gap: 30px;
+    padding-top: 40px;
 }

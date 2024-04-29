@@ -1,0 +1,97 @@
+.booking-finish{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.booking-finish-header{
+    /*align-items: flex-start;*/
+    /*justify-content: center;*/
+    position: relative;
+    width: auto;
+    height: auto;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+}
+.booking-finish-text{
+    position: relative;
+    width: auto;
+    height: 24px;
+    margin: 4px 0 0 31px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+}
+.booking-finish-buttons{
+    display: flex;
+    flex-direction: row; /* Вирівнювання дочірніх елементів в рядок */
+    justify-content: flex-start; /* Центрування елементів по горизонталі */
+    align-items: flex-start; /* Центрування елементів по вертикалі */
+    gap: 30px;
+    padding-top: 40px;
+}
+.booking-go-to-profile {
+    position: relative;
+    width: 210px;
+    height: 50px;
+    background: #f5f6f8;
+    z-index: 1;
+    border-radius: 4px;
+}
+.go-to-profile {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #b3b3b3;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 2;
+}
+.booking-go-to-catalog {
+    position: relative;
+    width: 210px;
+    height: 50px;
+    border-radius: 4px;
+    background: #3252df;
+    z-index: 4;
+    box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
+}
+.go-to-catalog {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+}
