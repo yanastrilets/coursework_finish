@@ -14,6 +14,10 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import {MainHeader} from "../components/mainHeader";
 import {addDays, isSameDay, subDays} from 'date-fns'; // Бібліотека для зручної роботи з датами
+import BedIcon from '@mui/icons-material/Bed';
+import BathtubIcon from '@mui/icons-material/Bathtub';
+import KitchenIcon from '@mui/icons-material/Kitchen';
+import EventSeatIcon from '@mui/icons-material/ChairRounded';
 
 export const HousePage = () =>{
     const { id } = useParams();
@@ -192,28 +196,28 @@ export const HousePage = () =>{
                     </div>
                     <div className='containers-of-details'>
                         <div className='rooms'>
-                            <div className='bedroom-icon'/>
+                            <BedIcon style={{ fontSize: 38, color: '#152c5b' }} />
                             <div className='room-details'>
                                 <span className='num-of-room'>{house.count_of_room}</span>
                                 <span className='text-room'> bedroom</span>
                             </div>
                         </div>
                         <div className='rooms'>
-                            <div className='livingroom-icon'/>
+                            <EventSeatIcon style={{ fontSize: 38, color: '#152c5b' }} />
                             <div className='room-details'>
                                 <span className='num-of-room'>1</span>
                                 <span className='text-room'> living room</span>
                             </div>
                         </div>
                         <div className='rooms'>
-                            <div className='bedroom-icon-b'/>
+                            <BathtubIcon style={{ fontSize: 38, color: '#152c5b' }} />
                             <div className='room-details'>
                                 <span className='num-of-room'>{house.count_of_bathroom}</span>
                                 <span className='text-room'> bathroom</span>
                             </div>
                         </div>
                         <div className='rooms'>
-                            <div className='diningroom-icon'/>
+                            <KitchenIcon style={{ fontSize: 38, color: '#152c5b' }} />
                             <div className='room-details'>
                                 <span className='num-of-room'>{house.count_of_kitchen}</span>
                                 <span className='text-room'> dining room</span>

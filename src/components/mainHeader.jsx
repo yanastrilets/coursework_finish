@@ -48,7 +48,7 @@ export const MainHeader = () => {
                     <span className='stay'>Stay</span>
                     <span className='cation'>cation.</span>
                 </div>
-                <span className='about-us'>About us</span>
+
             </div>
             <div className='rectangle-2'/>
         </div>

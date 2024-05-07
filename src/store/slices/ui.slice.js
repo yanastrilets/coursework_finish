@@ -5,6 +5,9 @@ const initialState = {
     searchValue:"",
     user: null,
     selectedTenantId: null,
+    selectedLandlordId: null,
+    selectedCity: 'All',
+    priceRange: [0, 10000],
     bookingDetails: {
         houseId: null,
         startDate: new Date(),
@@ -24,6 +27,9 @@ const ui = createSlice(
             },
             setUser(state, action){
                 state.user = action.payload;
+            },
+            setSelectedLandlordId(state, action) {  // Додаємо новий редюсер
+                state.selectedLandlordId = action.payload;
             },
             setSelectedTenantId(state, action) {  // Додаємо новий редюсер
                 state.selectedTenantId = action.payload;
@@ -45,6 +51,12 @@ const ui = createSlice(
                 const { nights, sum } = action.payload;
                 state.bookingDetails.nights = nights;
                 state.bookingDetails.sum = sum;
+            },
+            setCity: (state, action) => {
+                state.selectedCity = action.payload;
+            },
+            setPriceRange: (state, action) => {
+                state.priceRange = action.payload;
             },
         }
     }

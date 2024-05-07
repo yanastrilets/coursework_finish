@@ -11,7 +11,7 @@ import {
 import {Home} from "./pages/Home";
 import {HousePage} from "./pages/HousePage";
 import {CataloguePage} from "./pages/CataloguePage";
-import {Provider} from "react-redux";
+import {Provider, useDispatch} from "react-redux";
 import {store} from "./store/store";
 import {SignUp} from "./pages/SignUp";
 import {FirstBookingPage} from "./pages/FirstBookingPage";
@@ -20,10 +20,32 @@ import {LandlordRegistration} from "./pages/LandlordRegistration";
 import {SecondBookingPage} from "./pages/SecondBookingPage";
 import {EndBookingPage} from "./pages/EndBookingPage";
 import {UserProfile} from "./pages/UserProfile/UserProfile";
+import {useEffect} from "react";
+import {uiActions} from "./store/slices/ui.slice";
+import {useGetAuthTokenMutation} from "./store/api/api";
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const login=async () => {
+            const res = await fetch('http://localhost:3001/auth/profile', {
+                headers: {
+                    authorization: "Bearer " + localStorage.getItem('token')
+                }
+            });
+            if (res.error) {
+                return;
+            }
+            const user = await res.json()
+
+
+            dispatch(uiActions.setUser(user))
+        }
+        login();
+    }, []);
     return (
-        <Provider store={store}>
+
             <div className='main-container'>
                 <BrowserRouter>
                     <Routes>
@@ -42,7 +64,7 @@ function App() {
                     </Routes>
                 </BrowserRouter>
             </div>
-        </Provider>
+
     );
 }
 

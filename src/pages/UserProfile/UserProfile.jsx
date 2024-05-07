@@ -1,19 +1,13 @@
 import React, {useEffect, useState} from "react";
 import {
-    Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
-    Paper,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    TextField
+    TextField, Dialog, DialogActions, DialogContent, DialogContentText,
+    DialogTitle, Paper, Table, TableBody, TableCell, TableContainer, TableHead,
+    TableRow, FormControl, InputLabel, Select, MenuItem, TablePagination
 } from "@mui/material";
 import {
     useCreateTenantMutation,
     useGetBookingsFromOneUserQuery,
-    useGetLandlordsQuery,
+    useGetLandlordsQuery, useGetReviewQuery, useGetReviewsByUserIdQuery,
     useGetTenantsFromOneUserQuery
 } from "../../store/api/api";
 import {format} from "date-fns";
@@ -24,9 +18,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import {Analytics} from "../../components/Analytics";
-import {LandlordTable} from "../../components/LandlordTable/LandlordTable";
-import {ApartmentTable} from "../../components/ApartmentTable/ApartmentTable";
 import {BookingList} from "../../components/BookingList/BookingList";
 import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
 import {DatePicker} from "@mui/x-date-pickers/DatePicker";
@@ -34,7 +25,7 @@ import Button from "@mui/material/Button";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
+    const {children, value, index, ...other} = props;
     return (
         <div
             role="tabpanel"
@@ -44,7 +35,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box sx={{p: 3}}>
                     <Typography>{children}</Typography>
                 </Box>
             )}
@@ -60,17 +51,16 @@ function a11yProps(index) {
 }
 
 const inputStyle = {
-    minWidth: "100%", // Ви можете встановити більше значення, якщо потрібно
+    minWidth: "100%",
     marginBottom: 8,
 };
 
-export const UserProfile = () =>{
+export const UserProfile = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.ui.user);
-    //const { data: landlords, isLoading, isError } = useGetLandlordsQuery();
-    const {data: tenants, isLoading, error} = useGetTenantsFromOneUserQuery(user?.id);
+    console.log(user);
     const {data: bookings, isLoadingBookings, isErrorBookings} = useGetBookingsFromOneUserQuery(user?.id);
-    const [userName, setUserName] = useState(user.username);
+    const [userName, setUserName] = useState(user?.username);
     const [password, setPassword] = useState('');
     const [value, setValue] = useState(0);
     const [open, setOpen] = useState(false);
@@ -82,71 +72,64 @@ export const UserProfile = () =>{
     const [passportInfo, setPassportInfo] = useState('');
     const [errors, setErrors] = useState({});
     const [createTenant, {isLoading: isCreatingTenant, error: createTenantError}] = useCreateTenantMutation();
+    const [sortField, setSortField] = useState('name');
+    const [sortOrder, setSortOrder] = useState('asc');
+    const { data: reviews, isLoading: isLoadingReviews, isError: isErrorReviews } = useGetReviewsByUserIdQuery(user?.id);
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
 
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
+        setPage(0);
+    };
+    console.log(user)
+    const { data: tenants, isLoading, error } = useGetTenantsFromOneUserQuery({
+        id: user?.id,
+        sortField,
+        sortOrder
+    });
     useEffect(() => {
         console.log(tenants);
     }, [tenants]);
     useEffect(() => {
         console.log(bookings);
     }, [bookings]);
-    if(isLoading) return <div>is loading</div>;
+    if (isLoading) return <div>is loading</div>;
     if (error) return <div>is error</div>;
 
-    if(isLoadingBookings) return <div>is loading</div>;
+    if (isLoadingBookings) return <div>is loading</div>;
     if (isErrorBookings) return <div>is error</div>;
 
     const transformedData = tenants.map(tenant => ({
-        ...tenant.person, // Spread properties of 'person' into the new object
-        date_of_birth: format(new Date(tenant.person.date_of_birth), 'dd/MM/yyyy'), // Formatting the date
-        id: tenant.id // Maintain 'id' from the original landlord object if needed
+        ...tenant.person,
+        date_of_birth: format(new Date(tenant.person.date_of_birth), 'dd/MM/yyyy'),
+        id: tenant.id
     }));
+
     const handleClickOpen = () => {
 
-            setOpen(true);
+        setOpen(true);
 
     };
-    // const validateFields = () => {
-    //     const newErrors = {};
-    //     if (!firstName.trim()) newErrors.firstName = "First Name is required";
-    //     if (!lastName.trim()) newErrors.lastName = "Last Name is required";
-    //     if (!dob) newErrors.dob = "Date of Birth is required";
-    //     if (!email.trim()) newErrors.email = "Email is required";
-    //     if (!phone.trim()) newErrors.phone = "Phone is required";
-    //     if (!passportInfo.trim()) newErrors.passportInfo = "Passport Info is required";
-    //
-    //     setErrors(newErrors);
-    //     return Object.keys(newErrors).length === 0;
-    // };
+
     const handleClose = () => {
         setOpen(false);
     };
     const columns = [
-        { id: 'name', label: 'Name', minWidth: 120 },
-        { id: 'surname', label: 'Surname', minWidth: 150 },
-        { id: 'date_of_birth', label: 'Date of Birth', minWidth: 150 },
-        { id: 'phone', label: 'Phone', minWidth: 180 },
-        { id: 'email', label: 'Email', minWidth: 250 },
-        { id: 'passport_info', label: 'Passport Info', minWidth: 150 },
+        {id: 'name', label: 'Name', minWidth: 120},
+        {id: 'surname', label: 'Surname', minWidth: 150},
+        {id: 'date_of_birth', label: 'Date of Birth', minWidth: 150},
+        {id: 'phone', label: 'Phone', minWidth: 180},
+        {id: 'email', label: 'Email', minWidth: 250},
+        {id: 'passport_info', label: 'Passport Info', minWidth: 150},
     ];
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
-    // const handleInputChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setFormData({
-    //         ...formData,
-    //         [name]: value
-    //     });
-    // };
-    //
-    // const handleDateChange = (date) => {
-    //     setFormData({
-    //         ...formData,
-    //         dob: date
-    //     });
-    // };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const tenantData = {
@@ -161,17 +144,24 @@ export const UserProfile = () =>{
 
         try {
             const newTenant = await createTenant(tenantData).unwrap(); // unwrap() для отримання даних безпосередньо
-             // Переконайтеся, що ваш backend повертає id новоствореного тенанта
-        } catch (error) {
+            } catch (error) {
             console.error("Error creating tenant:", error);
             return;
         }
         handleClose();
     };
+
+    const handleChangeSortField = (event) => {
+        setSortField(event.target.value);
+    };
+
+    const handleChangeSortOrder = (event) => {
+        setSortOrder(event.target.value);
+    };
     return (
         <div className='page'>
             <MainHeader/>
-            <Box sx={{ width:'100%', heigh:'100%', flexGrow: 1, bgcolor: 'background.paper', display: 'flex' }}>
+            <Box sx={{width: '100%', heigh: '100%', flexGrow: 1, bgcolor: 'background.paper', display: 'flex'}}>
                 <Tabs
                     orientation="vertical"
                     variant="scrollable"
@@ -222,8 +212,25 @@ export const UserProfile = () =>{
                         </div>
 
                         <div className='row-of-filters'>
-                            <div className='profile-text-tenants' style={{ flex: 1 }}>Tenants</div>
+                            <div className='profile-text-tenants' style={{flex: 1}}>Tenants</div>
                             <div className='container-of-button-add'>
+
+                                <Box sx={{ display: 'flex', gap: 2 }}>
+                                    <FormControl size="small">
+                                        <InputLabel id="sort-field-label">Sort By</InputLabel>
+                                        <Select labelId="sort-field-label" id="sort-field" value={sortField} label="Sort By" onChange={handleChangeSortField}>
+                                            <MenuItem value="name">Name</MenuItem>
+                                            <MenuItem value="surname">Surname</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <FormControl size="small">
+                                        <InputLabel id="sort-order-label">Order</InputLabel>
+                                        <Select labelId="sort-order-label" id="sort-order" value={sortOrder} label="Order" onChange={handleChangeSortOrder}>
+                                            <MenuItem value="asc">Ascending</MenuItem>
+                                            <MenuItem value="desc">Descending</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Box>
                                 <div className='bg-button-add'>
                                     <span className='button-add' onClick={handleClickOpen}>+ Add tenant</span>
                                 </div>
@@ -269,6 +276,15 @@ export const UserProfile = () =>{
                                     </TableBody>
                                 </Table>
                             </TableContainer>
+                            <TablePagination
+                                rowsPerPageOptions={[10, 15, 25, { label: 'All', value: -1 }]}
+                                component="div"
+                                count={tenants.length}
+                                rowsPerPage={rowsPerPage}
+                                page={page}
+                                onPageChange={handleChangePage}
+                                onRowsPerPageChange={handleChangeRowsPerPage}
+                            />
                         </Paper>
                     </div>
                 </TabPanel>
@@ -317,12 +333,12 @@ export const UserProfile = () =>{
                         <div className='second-column-inputs'>
                             <span className='text-above-input'>Email Address</span>
                             <TextField label="" error={!!errors.email}
-                                       variant='outlined' size='small'  style={inputStyle}
+                                       variant='outlined' size='small' style={inputStyle}
                                        value={email}
                                        onChange={e => setEmail(e.target.value)}/>
                             <span className='text-above-input'>Phone number</span>
                             <TextField label="" error={!!errors.phone}
-                                       variant='outlined' size='small'  style={inputStyle}
+                                       variant='outlined' size='small' style={inputStyle}
                                        value={phone}
                                        onChange={e => setPhone(e.target.value)}/>
                             <span className='text-above-input'>Passport Info</span>

@@ -26,8 +26,9 @@ export const MainFooter = () =>{
                 <span className='phone-number'>021 - 2208 - 1996</span>
             </div>
             <span className='copyright-all-rights-reserved-staycation'>
-          Copyright 2019 • All rights reserved • Staycation
+          Copyright 2024 • All rights reserved • Staycation
         </span>
+            <br/>
         </div>
     );
 }

@@ -1,10 +1,14 @@
 import './houseBlock.css';
 import React from "react";
-export const HouseBlock = ({ data }) => {
+import carouselData from "../data/carouselData.json";
+export const HouseBlock = ({ data}) => {
+    const randomIndex = Math.floor(Math.random() * carouselData.carouselData.length);
+    const randomImage = carouselData.carouselData[randomIndex].src; // Correctly use the randomIndex
+
     return (
         <div className='rectangle-block'>
             <div className='rectangle-1d-block'>
-                <img src={'https://a0.muscache.com/im/pictures/21f1bd4d-cac0-47a0-84d3-a6413f675003.jpg?im_w=1200'} alt={data.id} style={{width: "263px", height: "180px"}}/>
+                <img src={randomImage} alt={data.id} style={{width: "263px", height: "180px"}}/>
                 <div className='rectangle-1e-block'>
                     <div className='popular-choice'>
                         <span className='popular'>${data.price_per_night}</span>

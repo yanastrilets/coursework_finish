@@ -3,13 +3,13 @@ import {
     Dialog,
     DialogActions,
     DialogContent, DialogContentText,
-    DialogTitle,
-    Paper,
+    DialogTitle, FormControl, InputLabel, MenuItem,
+    Paper, Select,
     Table,
     TableBody,
     TableCell,
     TableContainer,
-    TableHead,
+    TableHead, TablePagination,
     TableRow, TextField
 } from "@mui/material";
 import './LandlordTable.css'
@@ -18,30 +18,21 @@ import {
     useCreateLandlordMutation,
     useCreateTenantMutation,
     useGetApartmentByIdQuery,
-    useGetLandlordsQuery
+    useGetLandlordsQuery, useGetSortedLandlordsQuery
 } from "../../store/api/api";
 import {format} from "date-fns";
 import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {DatePicker} from "@mui/x-date-pickers/DatePicker";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
-function createData(name, surname, dateOfBirth, phone, email, passportInfo) {
-    return { name, surname, dateOfBirth, phone, email, passportInfo };
-}
-
-const rows = [
-    createData('John', 'Doe', '1980-02-15', '+1234567890', 'john.doe@example.com', 'AB1234567'),
-    createData('Alice', 'Smith', '1975-06-01', '+0987654321', 'alice.smith@example.com', 'CD7654321'),
-    // Add more rows as needed
-];
 const inputStyle = {
     minWidth: "100%", // Ви можете встановити більше значення, якщо потрібно
     marginBottom: 8,
 };
 
 export const LandlordTable = () => {
-    const { data: landlords, isLoading, isError } = useGetLandlordsQuery();
 
     const [open, setOpen] = useState(false);
     const [firstName, setFirstName] = useState('');
@@ -52,17 +43,39 @@ export const LandlordTable = () => {
     const [passportInfo, setPassportInfo] = useState('');
     const [errors, setErrors] = useState({});
     const [createLandlord, {isLoading: isCreatingLandlord, error: createLandlordError}] = useCreateLandlordMutation();
+    const [sortField, setSortField] = useState('name');
+    const [sortOrder, setSortOrder] = useState('asc');
+    const [refresh, setRefresh] = useState(0);
+    const { data: landlords, isLoading, isError } = useGetSortedLandlordsQuery({
+        sortField,
+        sortOrder
+    });
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
+        setPage(0);
+    };
 
     useEffect(() => {
-        console.log(landlords);
-    }, [landlords]);
+        if (landlords && isError) {
+            console.error('Error fetching landlords');
+            console.log(landlords)
+        }
+    }, [landlords, isError]);
+
+    const transformedData = landlords?.map(landlord => ({
+        ...landlord.person,
+        date_of_birth: format(new Date(landlord.person.date_of_birth), 'dd/MM/yyyy'),
+        id: landlord.id
+    })) || [];
     if(isLoading) return <div>is loading</div>;
     if (isError) return <div>is error</div>;
-    const transformedData = landlords.map(landlord => ({
-        ...landlord.person, // Spread properties of 'person' into the new object
-        date_of_birth: format(new Date(landlord.person.date_of_birth), 'dd/MM/yyyy'), // Formatting the date
-        id: landlord.id // Maintain 'id' from the original landlord object if needed
-    }));
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -97,10 +110,33 @@ export const LandlordTable = () => {
         { id: 'email', label: 'Email', minWidth: 250 },
         { id: 'passport_info', label: 'Passport Info', minWidth: 150 },
     ];
+    const handleChangeSortField = (event) => {
+        setSortField(event.target.value);
+    };
+
+    const handleChangeSortOrder = (event) => {
+        setSortOrder(event.target.value);
+    };
     return (
         <div className='landlord-table-main-component'>
             <div className='row-of-filters'>
                 <div className='container-of-button-add'>
+                    <Box sx={{ display: 'flex', gap: 2 }}>
+                        <FormControl size="small">
+                            <InputLabel id="sort-field-label">Sort By</InputLabel>
+                            <Select labelId="sort-field-label" id="sort-field" value={sortField} label="Sort By" onChange={handleChangeSortField}>
+                                <MenuItem value="name">Name</MenuItem>
+                                <MenuItem value="surname">Surname</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormControl size="small">
+                            <InputLabel id="sort-order-label">Order</InputLabel>
+                            <Select labelId="sort-order-label" id="sort-order" value={sortOrder} label="Order" onChange={handleChangeSortOrder}>
+                                <MenuItem value="asc">Ascending</MenuItem>
+                                <MenuItem value="desc">Descending</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Box>
                     <div className='bg-button-add'>
                         <span className='button-add' onClick={handleClickOpen}>+ Add landlord</span>
                     </div>
@@ -128,9 +164,9 @@ export const LandlordTable = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {transformedData.map((row) => {
+                            {transformedData.map((row, index) => {
                                 return (
-                                    <TableRow hover role="checkbox" tabIndex={-1} key={row.name}>
+                                    <TableRow hover role="checkbox" tabIndex={-1} key={row.id|| index}>
                                         {columns.map((column) => {
                                             const value = row[column.id];
                                             return (
@@ -146,6 +182,15 @@ export const LandlordTable = () => {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <TablePagination
+                    rowsPerPageOptions={[10, 15, 25, { label: 'All', value: -1 }]}
+                    component="div"
+                    count={landlords.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                />
             </Paper>
             <Dialog
                 open={open}

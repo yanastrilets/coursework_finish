@@ -1,14 +1,19 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import './BookingBlock.css';
-import { useGetApartmentByIdQuery, useGetApartmentsQuery } from "../../store/api/api";
-import { format } from 'date-fns';
+import {
+    useCreateRefundMutation,
+    useGetApartmentByIdQuery,
+    useGetApartmentsQuery,
+    useGetReviewQuery, useUpdateBookingStatusMutation
+} from "../../store/api/api";
+import {format} from 'date-fns';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import {Link} from "react-router-dom";
 
 
-export const BookingBlock = ({ booking }) => {
+export const BookingBlock = ({booking}) => {
     useEffect(() => {
         console.log(booking);
     }, [booking]);
@@ -16,11 +21,47 @@ export const BookingBlock = ({ booking }) => {
     // Форматуємо дати для відображення
     const formattedCheckIn = format(new Date(booking.check_in), 'dd/MM/yyyy');
     const formattedCheckOut = format(new Date(booking.check_out), 'dd/MM/yyyy');
+
+    const [isRejected, setIsRejected] = useState(booking.status === 3);
+    const [isFinished, setIsFinished] = useState(new Date(booking.check_in) <= new Date() && booking.status !== 3);
+    const {data: review, isLoading: isLoadingReviews, isError: isErrorReviews} = useGetReviewQuery(booking.id);
     const [value, setValue] = React.useState(0);
-    let isFinished = false;
-    if(new Date(booking.check_in) <= new Date()){
-        isFinished = true;
-    }
+    const [createRefund, { isLoading: isRefunding, isSuccess: refundSuccess }] = useCreateRefundMutation();
+    const [updateBookingStatus, { isLoading: isUpdating, isSuccess: updateSuccess }] = useUpdateBookingStatusMutation();
+
+    if(isLoadingReviews) return <div>is load</div>
+    const price = Number(booking.price) || 0;
+    const handleRefund = () => {
+        if (isFinished) {
+            alert("Booking cannot be refunded before it starts.");
+            return;
+        }
+        try {
+            // Створення відшкодування
+            createRefund({
+                bookingId: booking.id,
+                sum: price * 0.95, // assuming a 95% refund rate
+                created_at: new Date() // current date as refund date
+            }).unwrap();
+
+            // Оновлення статусу бронювання на "Rejected"
+            updateBookingStatus({ id: booking.id }).unwrap()
+                .then(response => {
+                    alert("Booking status updated successfully!");
+                    console.log(response);
+                })
+                .catch(error => {
+                    console.error("Error updating booking status:", error);
+                    alert("Failed to update the booking status.");
+                });
+
+            alert("Booking has been rejected and refund has been initiated.");
+            setIsRejected(true); // Оновлення локального стану на відхилено
+        } catch (error) {
+            console.error("Failed to process refund or update booking status:", error);
+            alert("Failed to process the refund or update the booking status.");
+        }
+    };
     return (
         <div className='booking-block'>
             <div className='booking-header-block'>
@@ -29,20 +70,32 @@ export const BookingBlock = ({ booking }) => {
                 </span>
                 <div className='price-rate'>
                     {
-                        isFinished && <Rating
+                        (isFinished  ) &&  <Rating
                             name="simple-controlled"
-                            value={value}
+                            value={review?.review}
                             size='large'
+                            disabled={review?.review}
                             onChange={(event, newValue) => {
                                 setValue(newValue);
                             }}
                         />
                     }
 
-                    { !isFinished && <div className='booking-refund'>
+                    {/*{booking.status !== 3 &&!isFinished && <div onClick={handleRefund} className='booking-refund'>*/}
 
-                        <span className='refund'>Reject booking</span>
-                    </div>}
+                    {/*    <span className='refund'>Reject booking</span>*/}
+                    {/*</div>}*/}
+                    {/*{booking.status === 3 && <span style={{color: '#3252df', marginLeft: 500}} className='refund-text'>Rejected</span>}*/}
+
+                    {(!isRejected ) && !isFinished && (
+                        <div onClick={handleRefund} className='booking-refund'>
+                            <span className='refund'>Reject booking</span>
+                        </div>
+                    )}
+                    {(isRejected) && (
+                        <span style={{ color: '#3252df', marginLeft: 500 }} className='refund-text'>Rejected</span>
+                    )}
+
                 </div>
                 {/*<hr className='hr-under-filters' style={{marginBottom: 20, marginTop: 10}}/>*/}
             </div>
@@ -61,7 +114,7 @@ export const BookingBlock = ({ booking }) => {
                 </div>
                 <div className='total-price-container'>
                     <div className='booking-price'>
-                        <span className='total-price'>{`Total: $${booking.price}`}</span>
+                        <span className='total-price'>{`Total: $${price.toFixed(1)}`}</span>
                     </div>
                 </div>
             </div>

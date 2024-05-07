@@ -63,7 +63,9 @@ export const FirstBookingPage = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.ui.user);
     const selectedTenantId = useSelector(state => state.ui.selectedTenantId);
-    const {data: tenants, isLoading, error} = useGetTenantsFromOneUserQuery(user?.id);
+    const [sortField, setSortField] = useState('name');
+    const [sortOrder, setSortOrder] = useState('asc');
+    const {data: tenants, isLoading, error} = useGetTenantsFromOneUserQuery({id: user?.id, sortField, sortOrder});
 
     const {bookingDetails} = useSelector(state => state.ui);
     const {data: house, isLoadingHouse, isError} = useGetApartmentByIdQuery(bookingDetails.houseId);
@@ -101,6 +103,9 @@ export const FirstBookingPage = () => {
             setOpen(true);
         }
     };
+    useEffect(() => {
+        console.log(tenants)
+    }, []);
     const handleAgreeClick = async () => {
         let usedTenantId = selectedTenantId;
 
@@ -206,7 +211,7 @@ export const FirstBookingPage = () => {
     };
 
     if (isLoading) return <p>Завантаження...</p>;
-    if (!user) return <p>Завантаження даних користувача...</p>;
+    if (!user) return <p>Користувач не ввійшов в систему!</p>;
     //const location = house.address.country + ", " + house.address.city;
     return (
         <div className='main-container'>

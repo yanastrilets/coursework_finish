@@ -91,6 +91,21 @@
     white-space: nowrap;
     z-index: 5;
 }
+.refund-text{
+    position: relative;
+    width: 95px;
+    height: 50px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+}
 .total-price-container{
     display: flex;
     align-items: flex-end;
