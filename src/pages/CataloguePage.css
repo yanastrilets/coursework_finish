@@ -1,0 +1,20 @@
+/* CataloguePage.css */
+.catalogue-page {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.filters {
+    width: 30%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box; /* Щоб padding не додавався до загальної ширини */
+}
+
+.catalogue {
+    width: 75%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box; /* Щоб padding не додавався до загальної ширини */
+}

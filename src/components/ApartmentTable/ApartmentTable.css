@@ -1,0 +1,36 @@
+.apartment-table-main-component{
+    min-height: 600px;
+    min-width: 1130px;
+}
+.apartment-div-number-of-flat-house{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.apartment-text-above-input {
+    display: block;
+    position: relative;
+    height: 27px;
+    margin: 0 0 0 0;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 1;
+}
+.apartment-first-column-inputs{
+    min-width: 250px;
+}
+.apartment-row-of-inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+}
+.apartment-second-column-inputs{
+    min-width: 250px;
+}

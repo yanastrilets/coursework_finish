@@ -20,6 +20,12 @@ textarea,
 button {
     outline: 0;
 }
+a {
+    text-decoration: none !important;
+}
+.active-link{
+    color: #3252df;
+}
 
 .main-container {
     position: relative;
@@ -30,7 +36,7 @@ button {
 }
 .rectangle {
     position: relative;
-    width: auto;
+    width: 1440px;
     height: auto;
     margin: 1px 0 0 0;
     background: #ffffff;
@@ -82,7 +88,7 @@ button {
     width: 156px;
     height: 50px;
     top: 0;
-    left: 821px;
+    left: 900px;
     z-index: 131;
 }
 .home {
@@ -101,7 +107,7 @@ button {
 }
 .home-1 {
     position: relative;
-    color: #3252df;
+    color: #000000;
     font-family: Poppins, var(--default-font-family);
     font-size: 16px;
     font-weight: 400;
@@ -139,7 +145,7 @@ button {
     width: 148px;
     height: 39px;
     top: 5px;
-    left: 0;
+    left: -120px;
     font-family: Poppins, var(--default-font-family);
     font-size: 26px;
     font-weight: 500;
@@ -761,7 +767,7 @@ button {
     height: 215px;
     top: 245px;
     left: 390px;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 57;
@@ -773,7 +779,7 @@ button {
     height: 215px;
     top: 0;
     left: 0;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 59;
@@ -866,7 +872,7 @@ button {
     height: 215px;
     top: 245px;
     left: 780px;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 67;
@@ -878,7 +884,7 @@ button {
     height: 215px;
     top: 0;
     left: 0;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 69;
@@ -1008,7 +1014,7 @@ button {
     position: relative;
     width: 263px;
     height: 180px;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 79;
@@ -1061,7 +1067,7 @@ button {
     position: relative;
     width: 263px;
     height: 180px;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 87;
@@ -1072,7 +1078,7 @@ button {
     position: relative;
     width: 263px;
     height: 180px;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 92;
@@ -1083,7 +1089,7 @@ button {
     position: relative;
     width: 263px;
     height: 180px;
-    background: url(assets/images/karpaty_lviv.jpg)
+    background: url(assets/images/karpaty_lviv1.jpg)
     no-repeat center;
     background-size: cover;
     z-index: 97;

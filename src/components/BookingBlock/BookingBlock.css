@@ -1,0 +1,112 @@
+.booking-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.booking-info-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-dates {
+    font-size: 16px;
+    color: #666;
+}
+
+.booking-price {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.booking-details {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-house {
+    font-size: 18px;
+    color: #152c5b;
+    font-weight: 500;
+}
+
+.booking-location {
+    font-size: 16px;
+    color: #999;
+}
+.booking-header-block {
+    font-size: 20px; /* Збільшений шрифт для заголовку бронювання */
+    font-weight: bold; /* Зробити текст жирнішим */
+    margin-bottom: 10px; /* Відступ знизу */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.booking-tenant {
+    display: block; /* Забезпечує, що ім'я відображається в новому рядку */
+    font-size: 16px; /* Розмір шрифту для імені тенанта */
+    color: #555; /* Колір тексту */
+    margin-top: 5px; /* Відступ зверху для відокремлення від інших елементів */
+}
+.booking-info-house{
+    display: flex;
+    flex-direction: column;
+}
+.price-rate{
+    display: flex;
+    flex-direction: column;
+}
+.booking-refund {
+    position: relative;
+    width: 210px;
+    height: 50px;
+    border-radius: 4px;
+    background: #3252df;
+    z-index: 4;
+    box-shadow: 0 8px 15px 0 rgba(49, 81, 223, 0.3);
+}
+.refund {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #ffffff;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+}
+.refund-text{
+    position: relative;
+    width: 95px;
+    height: 50px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+}
+.total-price-container{
+    display: flex;
+    align-items: flex-end;
+}

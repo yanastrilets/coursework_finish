@@ -1,0 +1,45 @@
+.landlord-table-main-component{
+    min-height: 600px;
+    min-width: 1130px;
+}
+.bg-button-add {
+    position: relative;
+    margin-left: 20px;
+    width: 210px;
+    height: 50px;
+    border-radius: 4px;
+    background: #ffffff;
+    z-index: 4;
+    box-shadow: 8px 8px 15px 0 rgba(49, 81, 223, 0.3);
+    border-color: #3252df;
+    /*border-width: 10px;*/
+}
+.button-add {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 73.81%;
+    height: 62%;
+    top: 18%;
+    left: 13.33%;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+}
+.row-of-filters{
+    display: flex;
+    flex-direction: row;
+}
+.container-of-button-add{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}

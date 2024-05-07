@@ -1,0 +1,59 @@
+.user-profile-main-component{
+    display: flex;
+    flex-direction: column;
+
+    width: 1130px;
+    margin: 0 auto;
+    margin-left: 20px;
+}
+.profile-text{
+    position: relative;
+    width: auto;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+}
+.profile-text-tenants{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    width: auto;
+    height: auto;
+    /*padding-top: 40px;*/
+    padding-bottom: 0px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+}
+.row-of-user-inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+.row-of-user-inputs-thirdcolumn{
+    margin-left: 500px;
+    margin-top: 20px;
+}
+.row-of-filters{
+    .row-of-filters {
+        display: flex;
+        justify-content: space-between; /* Це вирівнює діти на протилежних кінцях контейнера */
+        align-items: center; /* Це вирівнює діти по центру відносно їх висоти */
+    }
+}

@@ -1,0 +1,183 @@
+.rectangle-2c {
+    position: relative;
+    width: 1440px;
+    height: auto;
+    margin: 20px 0 0 0;
+    z-index: 2;
+    overflow: visible auto;
+}
+.rectangle-2d {
+    position: relative;
+    width: 1440px;
+    height: 1px;
+    margin: 0 0 0 0;
+    background: #e5e5e5;
+    z-index: 4;
+}
+.flex-row-c {
+    position: relative;
+    width: 989px;
+    height: 39px;
+    margin: 20px 0 0 150px;
+    z-index: 10;
+}
+.staycation-2e {
+    position: absolute;
+    width: 147px;
+    height: 39px;
+    top: 0;
+    left: 0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    z-index: 5;
+}
+.stay-2f {
+    position: relative;
+    color: #3252df;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.cation-30 {
+    position: relative;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: left;
+}
+.contact-us {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 852px;
+    color: #152c5b;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 10;
+}
+.flex-row-cc {
+    position: relative;
+    width: 1033px;
+    height: 56px;
+    margin: 8px 0 0 150px;
+    z-index: 12;
+}
+.kaboom-your-beauty {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 257px;
+    height: 48px;
+    top: 0;
+    left: 0;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    text-overflow: initial;
+    z-index: 6;
+    overflow: hidden;
+}
+.kaboom-your-beauty-31 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 257px;
+    height: 48px;
+    top: 0;
+    left: 395px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    text-overflow: initial;
+    z-index: 7;
+    overflow: hidden;
+}
+.support-staycation-id {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 0;
+    left: 852px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 11;
+}
+.phone-number {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 24px;
+    top: 32px;
+    left: 852px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 12;
+}
+.staycation-kemang-jakarta {
+    display: block;
+    position: relative;
+    height: 24px;
+    margin: 8px 0 0 1002px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 13;
+}
+.copyright-all-rights-reserved-staycation {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 367px;
+    height: 24px;
+    margin: 50px 0 0 537px;
+    color: #b0b0b0;
+    font-family: Poppins, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 8;
+}
